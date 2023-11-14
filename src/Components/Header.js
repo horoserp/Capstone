@@ -10,7 +10,7 @@ function Header() {
                 <Nav/>
             </HStack>
         </header>
-    )
+    );
 }
 
 export default Header;
