@@ -32,12 +32,39 @@ function Footer() {
                         <a href="mailto: contact@littlelemon.com" target="_blank" rel="noopener noreferrer">contact@littlelemon.com</a>
                     </VStack>
                     <VStack>
-                        <FontAwesomeIcon icon={faFacebookF} />
-                        <Text mb={4}>Facebook</Text>
-                        <FontAwesomeIcon icon={faTwitter} />
-                        <Text mb={4}>Twitter</Text>
-                        <FontAwesomeIcon icon={faInstagram} />
-                        <Text>Instagram</Text>
+                        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+                            <HStack
+                                justifyContent="space-between"
+                                alignItems="center"
+                                py={4}
+                            >
+                                <FontAwesomeIcon icon={faFacebookF} />
+                                <Text px={4}>Facebook</Text>
+                                <FontAwesomeIcon icon={faFacebookF} />
+                            </HStack>
+                        </a>
+                        <a href="http://www.twitter.com" target="_blank" rel="noopener noreferrer">
+                            <HStack
+                                justifyContent="space-between"
+                                alignItems="center"
+                                py={4}
+                            >
+                                <FontAwesomeIcon icon={faTwitter} />
+                                <Text px={4}>Twitter</Text>
+                                <FontAwesomeIcon icon={faTwitter} />
+                            </HStack>
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                            <HStack
+                                justifyContent="space-between"
+                                alignItems="center"
+                                py={4}
+                            >
+                                <FontAwesomeIcon icon={faInstagram} />
+                                <Text px={4}>Instagram</Text>
+                                <FontAwesomeIcon icon={faInstagram} />
+                            </HStack>
+                        </a>
                     </VStack>
                 </HStack>
             </Box>
