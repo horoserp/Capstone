@@ -12,7 +12,12 @@ function Nav() {
     return (
         <nav>
             <ul style={noBullets}>
-                <HStack spacing={32}>
+                <HStack
+                    px={16}
+                    justifyContent="space-between"
+                    alignItems="center"
+                    spacing={16}
+                >
                     <li><a href="" style={noUnderline}>Home</a></li>
                     <li><a href="" style={noUnderline}>About</a></li>
                     <li><a href="" style={noUnderline}>Menu</a></li>
