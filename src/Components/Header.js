@@ -12,7 +12,14 @@ function Header() {
             >
                 <HStack>
                     <img src={logo} alt={"Little Lemon Logo"} />
-                    <Nav/>
+                    <Nav
+                        first="column"
+                        second="row"
+                        px={16}
+                        justify="space-between"
+                        align="center"
+                        spacing={16}
+                    />
                 </HStack>
             </Box>
         </header>

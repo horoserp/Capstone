@@ -1,6 +1,6 @@
-import { HStack } from "@chakra-ui/react";
+import { HStack, Stack } from "@chakra-ui/react";
 
-function Nav() {
+function Nav(props) {
     const noBullets = {
         listStyleType: 'none'
     }
@@ -12,11 +12,12 @@ function Nav() {
     return (
         <nav>
             <ul style={noBullets}>
-                <HStack
-                    px={16}
-                    justifyContent="space-between"
-                    alignItems="center"
-                    spacing={16}
+                <Stack
+                    direction={[props.first, props.second]}
+                    px={props.px}
+                    justifyContent={props.justify}
+                    alignItems={props.align}
+                    spacing={props.spacing}
                 >
                     <li><a href="" style={noUnderline}>Home</a></li>
                     <li><a href="" style={noUnderline}>About</a></li>
@@ -24,7 +25,7 @@ function Nav() {
                     <li><a href="" style={noUnderline}>Reservations</a></li>
                     <li><a href="" style={noUnderline}>Order Online</a></li>
                     <li><a href="" style={noUnderline}>Login</a></li>
-                </HStack>
+                </Stack>
             </ul>
         </nav>
     );
