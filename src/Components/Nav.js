@@ -16,7 +16,7 @@ function Nav(props) {
                     direction={[props.first, props.second]}
                     px={props.px}
                     justifyContent={props.justify}
-                    alignItems={props.align}
+                    alignItems={props.alignItems}
                     spacing={props.spacing}
                 >
                     <li><a href="" style={noUnderline}>Home</a></li>

@@ -17,7 +17,7 @@ function Header() {
                         second="row"
                         px={16}
                         justify="space-between"
-                        align="center"
+                        alignItems="center"
                         spacing={16}
                     />
                 </HStack>
