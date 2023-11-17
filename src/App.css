@@ -1,0 +1,51 @@
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    padding: 15px 0px;
+}
+
+@media (min-width: 440px) {
+    .container {
+        grid-template-columns: 2fr 8fr 2fr;
+        grid-template-rows: auto;
+    };
+}
+
+.header {
+    display: inline-flex;
+    justify-content: center;
+}
+
+header nav ul {
+    display: inline-flex;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+}
+
+.nav li {
+    list-style-type: none;
+}
+
+.hero {
+    background-color: green;
+}
+
+.highlights {
+    background-color: red;
+}
+
+.testimonials {
+    background-color: yellow;
+}
+
+.about {
+    background-color: orange;
+}
+
+.footer {
+    background-color: indigo;
+}
