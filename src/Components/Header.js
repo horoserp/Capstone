@@ -5,23 +5,24 @@ import { Box, HStack } from "@chakra-ui/react";
 function Header() {
     return (
         <header>
-            <Box
+            {/* <Box
                 w="45%"
                 mx="auto"
                 my="20px"
             >
-                <HStack>
-                    <img src={logo} alt={"Little Lemon Logo"} />
-                    <Nav
-                        first="column"
-                        second="row"
-                        px={16}
-                        justify="space-between"
-                        alignItems="center"
-                        spacing={16}
-                    />
-                </HStack>
-            </Box>
+                <HStack> */}
+                <img src={logo} alt={"Little Lemon Logo"} />
+                <Nav/>
+                {/* <Nav
+                    first="column"
+                    second="row"
+                    px={16}
+                    justify="space-between"
+                    alignItems="center"
+                    spacing={16}
+                /> */}
+                {/* </HStack>
+            </Box> */}
         </header>
     );
 }

@@ -12,20 +12,20 @@ function Nav(props) {
     return (
         <nav>
             <ul style={noBullets}>
-                <Stack
+                {/* <Stack
                     direction={[props.first, props.second]}
                     px={props.px}
                     justifyContent={props.justify}
                     alignItems={props.alignItems}
                     spacing={props.spacing}
-                >
-                    <li><a href="" style={noUnderline}>Home</a></li>
-                    <li><a href="" style={noUnderline}>About</a></li>
-                    <li><a href="" style={noUnderline}>Menu</a></li>
-                    <li><a href="" style={noUnderline}>Reservations</a></li>
-                    <li><a href="" style={noUnderline}>Order Online</a></li>
-                    <li><a href="" style={noUnderline}>Login</a></li>
-                </Stack>
+                > */}
+                <li><a href="" style={noUnderline}>Home</a></li>
+                <li><a href="" style={noUnderline}>About</a></li>
+                <li><a href="" style={noUnderline}>Menu</a></li>
+                <li><a href="" style={noUnderline}>Reservations</a></li>
+                <li><a href="" style={noUnderline}>Order Online</a></li>
+                <li><a href="" style={noUnderline}>Login</a></li>
+                {/* </Stack> */}
             </ul>
         </nav>
     );

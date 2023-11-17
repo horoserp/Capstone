@@ -15,24 +15,24 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 function App() {
   return (
-    <ChakraProvider>
-      <main>
-        <Header/>
-        <Hero/>
-        <Highlights/>
-        <Testimonials/>
-        <About/>
-        <Footer/>
+    // <ChakraProvider>
+    <main>
+      <Header/>
+      <Hero/>
+      <Highlights/>
+      <Testimonials/>
+      <About/>
+      <Footer/>
 
-        <Reservations/>
-        <Details/>
-        <Confirmation/>
+      <Reservations/>
+      <Details/>
+      <Confirmation/>
 
-        <Menu/>
-        <OrderOnline/>
-        <Login/>
-      </main>
-    </ChakraProvider>
+      <Menu/>
+      <OrderOnline/>
+      <Login/>
+    </main>
+    // </ChakraProvider>
   );
 }
 
