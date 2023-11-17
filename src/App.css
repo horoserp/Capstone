@@ -1,3 +1,7 @@
+* {
+    font-family: 'Markazi Text', serif;
+}
+
 .container {
     display: grid;
     grid-template-columns: 100%;
@@ -15,6 +19,7 @@
 .header {
     display: inline-flex;
     justify-content: center;
+    font-size: 30px;
 }
 
 header nav ul {
@@ -22,16 +27,20 @@ header nav ul {
     gap: 25px;
 }
 
+header a {
+    color: black;
+}
+
 .nav a {
     text-decoration: none;
 }
 
-.nav li {
+li {
     list-style-type: none;
 }
 
 .hero {
-    background-color: green;
+    background-color: #495E57;
 }
 
 .highlights {
@@ -47,5 +56,24 @@ header nav ul {
 }
 
 .footer {
-    background-color: indigo;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 25px 0px;
+    background-color: #495E57;
+    color: white;
+    font-size: 24px;
+}
+
+footer a {
+    display: inline-flex;
+    color: white;
+}
+
+a span {
+    padding: 0px 15px;
+}
+
+footer li {
+    padding: 2px 0px;
 }

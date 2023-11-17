@@ -1,6 +1,10 @@
 function About() {
     return(
-        <section>This is about</section>
+        <section className="container">
+            <div className="about"/>
+            <p className="about">This is the about section</p>
+            <div className="about"/>
+        </section>
     );
 }
 

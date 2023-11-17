@@ -1,6 +1,10 @@
 function Testimonials() {
     return(
-        <section>This is the testimonials</section>
+        <section className="container">
+            <div className="testimonials"/>
+            <p className="testimonials">This is the testimonials section</p>
+            <div className="testimonials"/>
+        </section>
     );
 }
 

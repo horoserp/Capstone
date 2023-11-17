@@ -1,6 +1,10 @@
 function Highlights() {
     return (
-        <section>This is the highlights</section>
+        <section className="container">
+            <div className="highlights"/>
+            <p className="highlights">This is the highlights section</p>
+            <div className="highlights"/>
+        </section>
     );
 }
 

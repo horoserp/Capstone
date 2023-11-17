@@ -1,6 +1,10 @@
 function Hero() {
     return (
-        <section>This is the hero</section>
+        <section className="container">
+            <div className="hero"/>
+            <p className="hero">This is the Hero section</p>
+            <div className="hero"/>
+        </section>
     );
 }
 
