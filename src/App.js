@@ -11,11 +11,9 @@ import Confirmation from './Components/Confirmation';
 import Menu from './Components/Menu';
 import OrderOnline from './Components/OrderOnline';
 import Login from './Components/Login';
-import { ChakraProvider } from '@chakra-ui/react';
 
 function App() {
   return (
-    // <ChakraProvider>
     <main>
       <Header/>
       <Hero/>
@@ -32,7 +30,6 @@ function App() {
       <OrderOnline/>
       <Login/>
     </main>
-    // </ChakraProvider>
   );
 }
 
