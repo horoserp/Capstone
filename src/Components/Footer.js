@@ -5,7 +5,7 @@ import { faFacebookF, faTwitter, faInstagram } from "@fortawesome/free-brands-sv
 
 function Footer() {
     return (
-        <footer>
+        <footer className='container'>
             <img src={monoLogo} alt="Little Lemon white logo"/>
             <Nav/>
             <ul>

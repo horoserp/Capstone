@@ -3,7 +3,7 @@ import logo from '../Images/Logo.svg';
 
 function Header() {
     return (
-        <header>
+        <header className='container'>
             <img src={logo} alt={"Little Lemon Logo"} />
             <Nav/>
         </header>
