@@ -14,8 +14,8 @@ function About() {
                 </p>
             </div>
             <div>
-                <img src={owners} alt={"Mario and Adrian talking over prep counter"} />
-                <img src={owners2} alt={"Mario and Adrian smiling and laughing in kitchen"} />
+                <img className='over' src={owners} alt={"Mario and Adrian talking over prep counter"} />
+                <img className='under' src={owners2} alt={"Mario and Adrian smiling and laughing in kitchen"} />
             </div>
         </section>
     );

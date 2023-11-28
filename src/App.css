@@ -89,15 +89,29 @@ section:nth-of-type(3) {
     min-height: 300px;
 }
 
-section:nth-of-type(4) {
-    min-height: 300px;
-}
-
 section:nth-of-type(3) > h1 {
     font-family: 'Karla', sans-serif;
     font-size: 36px;
     font-weight: bold;
     color: #f4ce14;
+}
+
+section:nth-of-type(4) {
+    gap: 0px 100px;
+    padding: 50px 0px;
+}
+
+.over {
+    position: relative;
+    top: 20px;
+    z-index: 0;
+}
+
+.under {
+    position: relative;
+    right: 100px;
+    bottom: 20px;
+    z-index: -1;
 }
 
 footer {
