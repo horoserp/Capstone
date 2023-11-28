@@ -21,7 +21,7 @@ const menuItems = [
 
 function Highlights() {
     return (
-        <section>
+        <section className="container">
             <h1>This weeks specials!</h1>
             <button>Online Menu</button>
         </section>
