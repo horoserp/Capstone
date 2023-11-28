@@ -2,7 +2,7 @@ import heroImage from '../Images/restauranfood.jpg'
 
 function Hero() {
     return (
-        <section>
+        <section className='container'>
             <div>
                 <h1>Little Lemon</h1>
                 <h2>Chicago</h2>
