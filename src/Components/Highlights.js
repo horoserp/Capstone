@@ -26,15 +26,17 @@ function Highlights() {
         <section className="container">
             <h1>This weeks specials!</h1>
             <button>Online Menu</button>
-            {menuItems.map((menuItem) => (
-                <Specials
-                    key={menuItem.title}
-                    title={menuItem.title}
-                    description={menuItem.description}
-                    price={menuItem.price}
-                    imageSrc={menuItem.getImageSrc()}
-                />
-            ))}
+            <div className="container">
+                {menuItems.map((menuItem) => (
+                    <Specials
+                        key={menuItem.title}
+                        title={menuItem.title}
+                        description={menuItem.description}
+                        price={menuItem.price}
+                        imageSrc={menuItem.getImageSrc()}
+                    />
+                ))}
+            </div>
         </section>
     );
 }

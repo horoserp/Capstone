@@ -80,8 +80,39 @@ section:nth-of-type(1) > img {
 }
 
 section:nth-of-type(2) {
-    gap: 0px 100px;
-    min-height: 300px;
+    gap: 0px 350px;
+    padding-top: 100px;
+}
+
+.card {
+    border: 2px solid black;
+    margin: 0 30px;
+    background-color: #edefee;
+    min-height: 660px;
+}
+
+.card img {
+    border-radius: 16px 16px 0 0;
+}
+
+.card p {
+    max-width: 30ch;
+    padding: 20px;
+}
+
+.card h3 {
+    font-size: 30px;
+    padding: 20px;
+}
+
+.card span {
+    float: right;
+    padding-right: 20px;
+}
+
+span img {
+    width: 1em;
+    padding-top: 10px;
 }
 
 section:nth-of-type(3) {
@@ -163,16 +194,16 @@ a:active {
 }
 
 @media (max-width: 1111px) {
-    .flex {
+    .flex, nav {
         flex: 100%;
     }
     header > nav > ul > li {
         text-align: center;
     }
-    nav {
-        flex: 100%;
-    }
-    img {
+    .over, .under {
         margin-left: 50px;
+    }
+    ul {
+        padding: 5px 0;
     }
 }

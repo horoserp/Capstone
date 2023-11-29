@@ -3,7 +3,7 @@ import basket from "../Images/Basket.svg";
 const Specials = ({ title, description, price, imageSrc }) => {
     return (
         <div className="card">
-            <img src={imageSrc} alt={title} />
+            <img src={imageSrc} alt={title} style={{width: 425}}/>
             <h3>
                 {title}
                 <span>
