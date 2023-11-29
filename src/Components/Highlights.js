@@ -1,3 +1,5 @@
+import Specials from "./Special";
+
 const menuItems = [
     {
         getImageSrc: () => require("../Images/greek salad.jpg"),
@@ -6,7 +8,7 @@ const menuItems = [
         description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons."
     },
     {
-        getImageSrc: () => require("../Images/bruchetta.svg"),
+        getImageSrc: () => require("../Images/bruchetta.jpg"),
         title: "Bruchetta",
         price: "$5.99",
         description: "Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. ",
@@ -24,6 +26,15 @@ function Highlights() {
         <section className="container">
             <h1>This weeks specials!</h1>
             <button>Online Menu</button>
+            {menuItems.map((menuItem) => (
+                <Specials
+                    key={menuItem.title}
+                    title={menuItem.title}
+                    description={menuItem.description}
+                    price={menuItem.price}
+                    imageSrc={menuItem.getImageSrc()}
+                />
+            ))}
         </section>
     );
 }
