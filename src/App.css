@@ -121,7 +121,7 @@ footer {
     padding: 25px 100px;
     font-size: 15px;
     background-color: #495e57;
-    color: yellow;
+    color: #edefee;
 }
 
 footer a {
@@ -140,6 +140,10 @@ footer li {
     padding: 0px 15px;
 }
 
+footer li:last-child {
+    padding-bottom: 0px;
+}
+
 button {
     font-family: 'Karla', sans-serif;
     font-size: 22px;
@@ -156,4 +160,19 @@ a:hover {
 
 a:active {
     color: #ee9972;
+}
+
+@media (max-width: 1111px) {
+    .flex {
+        flex: 100%;
+    }
+    header > nav > ul > li {
+        text-align: center;
+    }
+    nav {
+        flex: 100%;
+    }
+    img {
+        margin-left: 50px;
+    }
 }

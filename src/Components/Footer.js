@@ -8,7 +8,7 @@ function Footer() {
         <footer className='container'>
             <img src={monoLogo} alt="Little Lemon white logo"/>
             <Nav/>
-            <ul>
+            <ul className='flex'>
                 <li>123 Fake St.</li>
                 <li>Chicago, IL   60601</li>
                 <li>(312) 555-4382</li>
