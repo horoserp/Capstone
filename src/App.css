@@ -117,16 +117,36 @@ span img {
 
 section:nth-of-type(3) {
     flex-direction: column;
-    gap: 100px 0px;
+    gap: 50px 0px;
     background-color: #495e57;
     min-height: 300px;
 }
 
 section:nth-of-type(3) > h1 {
     font-family: 'Karla', sans-serif;
-    font-size: 36px;
+    font-size: 50px;
     font-weight: bold;
     color: #f4ce14;
+}
+
+.review h3, .review div, .review p, .review div > span {
+    font-family: 'Karla', sans-serif;
+    font-size: 25px;
+    font-weight: 100;
+    color: #333333;
+}
+
+.review {
+    background-color: white;
+    padding: 15px;
+}
+
+.review div > span {
+    text-align: center;
+}
+
+.review p {
+    margin-bottom: 0;
 }
 
 section:nth-of-type(4) {
@@ -194,7 +214,7 @@ a:active {
 }
 
 @media (max-width: 1111px) {
-    .flex, nav {
+    .flex, nav, .review {
         flex: 100%;
     }
     header > nav > ul > li {
@@ -205,5 +225,8 @@ a:active {
     }
     ul {
         padding: 5px 0;
+    }
+    .review{
+        margin: 15px 0;
     }
 }
