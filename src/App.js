@@ -1,9 +1,5 @@
 import './App.css';
 import Header from './Components/Header';
-import Hero from './Components/Hero';
-import Highlights from './Components/Highlights';
-import Testimonials from './Components/Testimonials';
-import About from './Components/About';
 import Footer from './Components/Footer';
 import Reservations from './Components/Reservations';
 import Details from './Components/Details';
@@ -16,10 +12,6 @@ function App() {
   return (
     <main>
       <Header/>
-      <Hero/>
-      <Highlights/>
-      <Testimonials/>
-      <About/>
       <Footer/>
 
       <Reservations/>
