@@ -1,6 +1,4 @@
-import { Routes, Route, Link } from 'react-router-dom';
-import Homepage from './Homepage';
-import About from './About';
+import { Link } from 'react-router-dom';
 
 function Nav() {
     return (
@@ -13,16 +11,20 @@ function Nav() {
                     <li className="flex">
                         <Link to="/about">About</Link>
                     </li>
-                    <li className="flex"><a href="">Menu</a></li>
-                    <li className="flex"><a href="">Reservations</a></li>
-                    <li className="flex"><a href="">Order Online</a></li>
-                    <li className="flex"><a href="">Login</a></li>
+                    <li className="flex">
+                        <Link to="/highlights">Menu</Link>
+                    </li>
+                    <li className="flex">
+                        <Link to="/reservations">Reservations</Link>
+                    </li>
+                    <li className="flex">
+                        <Link to="/orderonline">Order Online</Link>
+                    </li>
+                    <li className="flex">
+                        <Link to="login">Login</Link>
+                    </li>
                 </ul>
             </nav>
-            <Routes>
-                <Route path="/" element={<Homepage />} />
-                <Route path="/about" element={<About />} />
-            </Routes>
         </div>
     );
 }
