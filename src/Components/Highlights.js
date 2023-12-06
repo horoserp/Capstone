@@ -23,10 +23,10 @@ const menuItems = [
 
 function Highlights() {
     return (
-        <section className="container">
+        <section>
             <h1>This weeks specials!</h1>
             <button>Online Menu</button>
-            <div className="container">
+            <div>
                 {menuItems.map((menuItem) => (
                     <Specials
                         key={menuItem.title}

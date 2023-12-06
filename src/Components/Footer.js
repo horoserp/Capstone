@@ -5,10 +5,10 @@ import { faFacebookF, faTwitter, faInstagram } from "@fortawesome/free-brands-sv
 
 function Footer() {
     return (
-        <footer className='container'>
+        <footer >
             <img src={monoLogo} alt="Little Lemon white logo"/>
             <Nav/>
-            <ul className='flex'>
+            <ul>
                 <li>123 Fake St.</li>
                 <li>Chicago, IL   60601</li>
                 <li>(312) 555-4382</li>
@@ -18,21 +18,21 @@ function Footer() {
                 <li>
                     <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faFacebookF} />
-                        <span className='social'>Facebook</span>
+                        <span>Facebook</span>
                         <FontAwesomeIcon icon={faFacebookF} />
                     </a>
                 </li>
                 <li>
                     <a href="http://www.twitter.com" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faTwitter} />
-                        <span className='social'>Twitter</span>
+                        <span>Twitter</span>
                         <FontAwesomeIcon icon={faTwitter} />
                     </a>
                 </li>
                 <li>
                     <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                         <FontAwesomeIcon icon={faInstagram} />
-                        <span className='social'>Instagram</span>
+                        <span>Instagram</span>
                         <FontAwesomeIcon icon={faInstagram} />
                     </a>
                 </li>
