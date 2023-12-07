@@ -5,12 +5,14 @@ import About from './About';
 
 function Homepage() {
     return (
-        <section>
-            <Hero/>
+        <>
+            <div className='primary-b'>
+                <Hero/>
+            </div>
             <Highlights/>
             <Testimonials/>
             <About/>
-        </section>
+        </>
     )
 }
 
