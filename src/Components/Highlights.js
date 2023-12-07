@@ -23,10 +23,17 @@ const menuItems = [
 
 function Highlights() {
     return (
-        <section>
-            <h1>This weeks specials!</h1>
-            <button>Online Menu</button>
-            <div>
+        <section className="container">
+            <h1 id="pad">This weeks specials!</h1>
+            <button
+                onClick={ (e) => {
+                    e.preventDefault();
+                    window.location.href="/highlights";
+                }}
+            >
+                Online Menu
+            </button>
+            <div className="container">
                 {menuItems.map((menuItem) => (
                     <Specials
                         key={menuItem.title}
