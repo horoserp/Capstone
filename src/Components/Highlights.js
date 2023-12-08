@@ -23,9 +23,10 @@ const menuItems = [
 
 function Highlights() {
     return (
-        <section className="container">
-            <h1 id="pad">This weeks specials!</h1>
+        <section className="container pad">
+            <h1 style={{paddingBottom: 75}}>This weeks specials!</h1>
             <button
+                style={{marginBottom: 75}}
                 onClick={ (e) => {
                     e.preventDefault();
                     window.location.href="/highlights";

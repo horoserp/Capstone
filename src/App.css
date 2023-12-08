@@ -107,7 +107,7 @@ button:hover {
     background-color: #EE9972;
 }
 
-#pad {
+.pad {
     padding: 75px 0 75px 0;
 }
 
@@ -135,6 +135,19 @@ button:hover {
 #basket-image {
     height: 30px;
     float: right;
+}
+
+.review {
+    height: 225px;
+    width: 225px;
+    padding: 15px 30px;
+    background-color: #EFEFEE;
+    border-radius: 16px;
+}
+
+.review-image {
+    height: 75px;
+    width: 75px;
 }
 
 @media (max-width: 600px) {

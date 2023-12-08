@@ -29,9 +29,9 @@ const reviews = [
 
 function Testimonials() {
     return(
-        <section>
-            <h1>Testimonials</h1>
-            <div style={{gap: "0 50px"}}>
+        <section className="pad">
+            <h1 style={{textAlign: "center", paddingBottom: 75, color: "#EDEFEE"}}>Testimonials</h1>
+            <div className="container">
                 {reviews.map((review) => (
                     <ReviewCard
                         key={review.name}

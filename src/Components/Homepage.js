@@ -10,7 +10,9 @@ function Homepage() {
                 <Hero/>
             </div>
             <Highlights/>
-            <Testimonials/>
+            <div className='primary-b'>
+                <Testimonials/>
+            </div>
             <About/>
         </>
     )

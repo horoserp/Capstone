@@ -16,8 +16,8 @@ const ReviewCard = ({ rating, imageSrc, name, comment }) => {
                 />
             </h3>
             <br></br>
-            <div style={{}}>
-                <img src={imageSrc} alt={name} style={{width: 75, height: 75}} />
+            <div>
+                <img src={imageSrc} alt={name} className="review-image" />
                 <span style={{paddingLeft: "15px", position: "relative", top: "-30px"}}>{name}</span>
             </div>
             <br></br>
