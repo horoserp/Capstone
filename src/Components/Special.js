@@ -1,4 +1,5 @@
 import basket from "../Images/Basket.svg";
+import "../App.css";
 
 const Specials = ({ title, description, price, imageSrc }) => {
     return (
@@ -6,12 +7,7 @@ const Specials = ({ title, description, price, imageSrc }) => {
             <img
                 src={imageSrc}
                 alt={title}
-                style={{
-                    width: 300,
-                    height: 250,
-                    borderRadius: "16px 16px 0 0",
-                    marginBottom: "-5px",
-                }}
+                id={"card-image"}
             />
             <h3 style={{backgroundColor: "#EFEFEE"}}>
                 {title}
@@ -19,31 +15,16 @@ const Specials = ({ title, description, price, imageSrc }) => {
                     {price}
                 </span>
             </h3>
-            <p style={{
-                height: 150,
-                backgroundColor: "#EFEFEE",
-                padding: "0 20px 25px 20px",
-                marginBottom: 0,
-                }}
-            >
+            <p className={"card-p card-p-2"}>
                 {description}
             </p>
-            <p style={{
-                backgroundColor: "#EFEFEE",
-                padding: "0 20px 25px 20px",
-                fontWeight: "bold",
-                }}
-            >
+            <p className={"card-p bold"}>
                 Order for delivery
                 <span>
                     <img
                         src={basket}
                         alt={"Basket icon"}
-                        style={{
-                            height: 20,
-                            float: "right",
-                            paddingTop: 3,
-                        }}
+                        id={"basket-image"}
                     />
                 </span>
             </p>

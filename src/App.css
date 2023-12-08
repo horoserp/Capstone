@@ -111,6 +111,32 @@ button:hover {
     padding: 75px 0 75px 0;
 }
 
+#card-image {
+    width: 300px;
+    height: 250px;
+    border-radius: 16px 16px 0 0;
+    margin-bottom: -5px;
+}
+
+.card-p {
+    background-color: #EFEFEE;
+    padding: 0 20px 25px 20px;
+}
+
+.card-p-2 {
+    height: 150px;
+    margin-bottom: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#basket-image {
+    height: 30px;
+    float: right;
+}
+
 @media (max-width: 600px) {
     .container {
         gap: 10px 0;
