@@ -159,6 +159,8 @@ button:hover {
 .over {
     position: relative;
     bottom: 35px;
+    object-fit: cover;
+    object-position: 90% 50%;
 }
 
 .under {
