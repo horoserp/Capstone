@@ -21,7 +21,9 @@ function App() {
         <Route path="/orderonline" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
       </Routes>
-      <Footer/>
+      <div className='primary-b'>
+        <Footer/>
+      </div>
     </main>
   );
 }
