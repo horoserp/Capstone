@@ -150,6 +150,24 @@ button:hover {
     width: 75px;
 }
 
+.about-image {
+    height: 300px;
+    width: 240px;
+    border-radius: 16px;
+}
+
+.over {
+    position: relative;
+    bottom: 35px;
+}
+
+.under {
+    position: relative;
+    top: 50px;
+    right: 100px;
+    z-index: -1;
+}
+
 @media (max-width: 600px) {
     .container {
         gap: 10px 0;
@@ -157,5 +175,11 @@ button:hover {
     .container > a {
         flex: 100%;
         text-align: center;
+    }
+    .over, .under {
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
     }
 }

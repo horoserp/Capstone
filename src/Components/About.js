@@ -3,7 +3,7 @@ import owners2 from "../Images/Mario and Adrian b.jpg";
 
 function About() {
     return(
-        <section>
+        <section className="container pad">
             <div>
                 <h1>Little Lemon</h1>
                 <h2>Chicago</h2>
@@ -14,8 +14,16 @@ function About() {
                 </p>
             </div>
             <div>
-                <img src={owners} alt={"Mario and Adrian talking over prep counter"} />
-                <img src={owners2} alt={"Mario and Adrian smiling and laughing in kitchen"} />
+                <img
+                    src={owners}
+                    alt={"Mario and Adrian talking over prep counter"}
+                    className="about-image over"
+                />
+                <img
+                    src={owners2}
+                    alt={"Mario and Adrian smiling and laughing in kitchen"}
+                    className="about-image under"
+                />
             </div>
         </section>
     );
