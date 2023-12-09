@@ -150,6 +150,10 @@ button:hover {
     width: 75px;
 }
 
+div > span {
+    font-size: 30px;
+}
+
 .about-image {
     height: 300px;
     width: 240px;
@@ -177,11 +181,13 @@ footer > nav {
     padding: 0 !important;
 }
 
-footer > nav > a:link, footer > ul > li > a:link {
+footer > nav > a:link, footer > ul > li > a:link, footer > ul > li {
+    padding: 2px 0;
     color: #EDEFEE;
     font-family: 'Karla', sans-serif;
     font-size: 20px;
-    padding: 5px 0;
+    list-style-type: none;
+    text-align: center;
 }
 
 footer > nav > a:visited, footer > ul > li > a:visited {
@@ -202,23 +208,37 @@ footer > nav > img {
     display: none;
 }
 
-footer > ul > li {
-    color: #EDEFEE;
-    list-style-type: none;
+a > span {
+    font-family: 'Karla', sans-serif;
+    padding: 0 15px;
 }
 
 @media (max-width: 600px) {
     .container {
         gap: 10px 0;
     }
+
     .container > a {
         flex: 100%;
         text-align: center;
     }
+
     .over, .under {
         top: 0;
         bottom: 0;
-        right: 0;
+        right: -30px;
         z-index: 0;
+    }
+
+    footer > nav {
+        flex-direction: row;
+    }
+
+    .container > nav {
+        gap: 0;
+    }
+
+    footer ul {
+        padding: 0;
     }
 }
