@@ -213,6 +213,22 @@ a > span {
     padding: 0 15px;
 }
 
+#reserve-image {
+    height: 350px;
+    width: 500px;
+    border-radius: 16px;
+}
+
+#icon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    width: 30%;
+    background-color: #333333;
+    border-radius: 50px;
+}
+
 @media (max-width: 600px) {
     .container {
         gap: 10px 0;
