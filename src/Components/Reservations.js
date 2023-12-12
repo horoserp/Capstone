@@ -1,5 +1,6 @@
 import restaurant from "../Images/restaurant.jpg";
 import backButton from "../Images/circle-arrow-left-solid.svg";
+import ReserveForm from "./ReserveForm";
 
 function Reservations() {
     return (
@@ -22,8 +23,8 @@ function Reservations() {
                     </div>
                 </div>
             </div>
-            <div>
-                date
+            <div className="highlight-b pad">
+                <ReserveForm/>
             </div>
         </section>
     );

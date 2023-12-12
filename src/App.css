@@ -40,6 +40,10 @@ p {
     color: #EDEFEE;
 }
 
+.highlight-b {
+    background-color: #EDEFEE;
+}
+
 .container {
     display: flex;
     width: 66vw;
@@ -227,6 +231,19 @@ a > span {
     width: 30%;
     background-color: #333333;
     border-radius: 50px;
+}
+
+form label {
+    font-size: 30px;
+    margin-bottom: -20px;
+}
+
+input, select {
+    height: 40px;
+    font-size: 30px;
+    text-align: center;
+    background-color: #F4CE14;
+    border-radius: 16px;
 }
 
 @media (max-width: 600px) {
