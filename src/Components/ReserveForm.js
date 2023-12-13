@@ -2,7 +2,14 @@ import { useState } from "react";
 
 function ReserveForm() {
 
-    const options = [
+    const [date, setDate] = useState("");
+    const [time, setTime] = useState("");
+    const [numOfGuests, setNumOfGuests] = useState("1");
+    const [occasion, setOccasion] = useState("");
+    const [accessible, setAccessible] = useState(false);
+    const [child, setChild] = useState(false);
+    const [outdoor, setOutdoor] = useState(false);
+    const [availableTimes , setAvailableTimes] = useState([
         {
             text: '--Select--',
             available: true,
@@ -31,16 +38,7 @@ function ReserveForm() {
             text: '22:00',
             available: true,
         },
-    ];
-
-    const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
-    const [numOfGuests, setNumOfGuests] = useState("");
-    const [occasion, setOccasion] = useState("");
-    const [accessible, setAccessible] = useState(false);
-    const [child, setChild] = useState(false);
-    const [outdoor, setOutdoor] = useState(false);
-    const [selected, setSelected] = useState(options[0].text);
+    ]);
 
     const accessibleHandler = () => {
         setAccessible(!accessible);
@@ -56,21 +54,21 @@ function ReserveForm() {
 
     const timeHandler = (e) => {
         setTime(e.target.value);
-        setSelected(e.target.value);
-        //Remove item from array
+        console.log(e.target.value);
+        // setAvailableTimes(e.target.value);
+        // Change selected item available to false
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(date, time, numOfGuests, occasion, accessible, child, outdoor, selected);
+        console.log(date, time, numOfGuests, occasion, accessible, child, outdoor, availableTimes);
         setDate("");
         setTime("");
-        setNumOfGuests("");
+        setNumOfGuests("1");
         setOccasion("");
         setAccessible(false);
         setChild(false);
         setOutdoor(false);
-        setSelected(options[0].text);
 }
 
 
@@ -87,9 +85,9 @@ function ReserveForm() {
                 onChange={(e) => setDate(e.target.value)}
             />
             <label htmlFor="res-time">Choose time</label>
-            <select id="res-time" value={selected} onChange={timeHandler}
+            <select id="res-time" onChange={timeHandler}
             >
-                {options.map((option) => {
+                {availableTimes.map((option) => {
                         if (!option.available) {
                             return null;
                         }
@@ -105,7 +103,7 @@ function ReserveForm() {
             <label htmlFor="guests">Number of guests</label>
             <input
                 type="number"
-                placeholder="1"
+                value={numOfGuests}
                 min="1"
                 max="10"
                 id="guests"
