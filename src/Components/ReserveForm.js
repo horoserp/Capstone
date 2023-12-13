@@ -4,32 +4,32 @@ function ReserveForm() {
 
     const options = [
         {
-            value: '',
             text: '--Select--',
+            available: true,
         },
         {
-            value: '17:00',
             text: '17:00',
+            available: true,
         },
         {
-            value: '18:00',
             text: '18:00',
+            available: true,
         },
         {
-            value: '19:00',
             text: '19:00',
+            available: true,
         },
         {
-            value: '20:00',
             text: '20:00',
+            available: true,
         },
         {
-            value: '21:00',
             text: '21:00',
+            available: true,
         },
         {
-            value: '22:00',
             text: '22:00',
+            available: true,
         },
     ];
 
@@ -40,7 +40,7 @@ function ReserveForm() {
     const [accessible, setAccessible] = useState(false);
     const [child, setChild] = useState(false);
     const [outdoor, setOutdoor] = useState(false);
-    const [selected, setSelected] = useState(options[0].value);
+    const [selected, setSelected] = useState(options[0].text);
 
     const accessibleHandler = () => {
         setAccessible(!accessible);
@@ -62,7 +62,7 @@ function ReserveForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(date, time, numOfGuests, occasion, accessible, child, outdoor);
+        console.log(date, time, numOfGuests, occasion, accessible, child, outdoor, selected);
         setDate("");
         setTime("");
         setNumOfGuests("");
@@ -70,7 +70,7 @@ function ReserveForm() {
         setAccessible(false);
         setChild(false);
         setOutdoor(false);
-        setSelected(options[0].value);
+        setSelected(options[0].text);
 }
 
 
@@ -80,13 +80,25 @@ function ReserveForm() {
             style={{display: "grid", maxWidth: 200, gap: 20}}
         >
             <label htmlFor="res-date">Choose date</label>
-            <input type="date" id="res-date" value={date} onChange={(e) => setDate(e.target.value)}/>
+            <input
+                type="date"
+                id="res-date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+            />
             <label htmlFor="res-time">Choose time</label>
             <select id="res-time" value={selected} onChange={timeHandler}
             >
                 {options.map((option) => {
-                    return (
-                        <option key={option.value} value={option.value}>{option.text}</option>
+                        if (!option.available) {
+                            return null;
+                        }
+                        return (
+                        <option
+                            key={option.text}
+                            value={option.text}>
+                                {option.text}
+                        </option>
                     );
                 })}
             </select>
@@ -100,7 +112,10 @@ function ReserveForm() {
                 onChange={(e) => setNumOfGuests(e.target.value)}
             />
             <label htmlFor="occasion">Occasion (Optional)</label>
-            <select id="occasion" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
+            <select id="occasion"
+                value={occasion}
+                onChange={(e) => setOccasion(e.target.value)}
+            >
                 <option>--Select--</option>
                 <option>Birthday</option>
                 <option>Anniversary</option>
