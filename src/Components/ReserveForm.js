@@ -55,8 +55,7 @@ function ReserveForm() {
     const timeHandler = (e) => {
         setTime(e.target.value);
         console.log(e.target.value);
-        // setAvailableTimes(e.target.value);
-        // Change selected item available to false
+        // Change selected time available to false
     }
 
     const handleSubmit = (e) => {
@@ -85,7 +84,7 @@ function ReserveForm() {
                 onChange={(e) => setDate(e.target.value)}
             />
             <label htmlFor="res-time">Choose time</label>
-            <select id="res-time" onChange={timeHandler}
+            <select id="res-time" value={time} onChange={timeHandler}
             >
                 {availableTimes.map((option) => {
                         if (!option.available) {
