@@ -54,8 +54,6 @@ function ReserveForm() {
 
     const timeHandler = (e) => {
         setTime(e.target.value);
-        console.log(e.target.value);
-        // Change selected time available to false
     }
 
     const handleSubmit = (e) => {
@@ -68,6 +66,8 @@ function ReserveForm() {
         setAccessible(false);
         setChild(false);
         setOutdoor(false);
+        const pos = availableTimes.map(e => e.text).indexOf(time);
+        availableTimes[pos].available = false;
 }
 
 
