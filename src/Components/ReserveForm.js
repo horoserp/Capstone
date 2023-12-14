@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Checkbox from "./Checkbox";
+import SelectBar from "./SelectBar";
 
 function ReserveForm() {
 
@@ -61,6 +62,7 @@ function ReserveForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(time);
         setDate("");
         setTime("");
         setNumOfGuests("1");
@@ -88,7 +90,7 @@ function ReserveForm() {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
             />
-            <label htmlFor="res-time">Choose time</label>
+            {/* <label htmlFor="res-time">Choose time</label>
             <select id="res-time" value={time} onChange={timeHandler}
             >
                 {availableTimes.map((option) => {
@@ -103,7 +105,15 @@ function ReserveForm() {
                         </option>
                     );
                 })}
-            </select>
+            </select> */}
+            <SelectBar
+                inputName="res-time"
+                display={time}
+                onChangeHandler={timeHandler}
+                options={availableTimes}
+            >
+                Choose Time
+            </SelectBar>
             <label htmlFor="guests">Number of guests</label>
             <input
                 type="number"

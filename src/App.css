@@ -195,11 +195,11 @@ footer > nav > a:link, footer > ul > li > a:link, footer > ul > li {
 }
 
 footer > nav > a:visited, footer > ul > li > a:visited {
-    color: #333333;
+    color: #F4CE14;
 }
 
 footer > nav > a:hover, footer > ul > li > a:hover {
-    color: #F4CE14;
+    color: #333333;
     padding-top: 0;
     border: none;
 }
