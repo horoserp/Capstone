@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Checkbox from "./Checkbox";
 
 function ReserveForm() {
 
@@ -123,29 +124,27 @@ function ReserveForm() {
                 <option>Engagement</option>
             </select>
             <h3>Seating Options (Optional)</h3>
-            <label htmlFor="wheel">Wheelchair Accessible</label>
-            <input
-                type="checkbox"
-                id="wheel"
-                checked={accessible}
-                onChange={accessibleHandler}
-            />
-            <label htmlFor="child2">Child Seat</label>
-            <input
-                type="checkbox"
-                id="child2"
-                value="Child Seat"
-                checked={child}
-                onChange={childHandler}
-            />
-            <label htmlFor="outdoor">Outdoor Seating</label>
-            <input
-                type="checkbox"
-                id="outdoor"
-                value="Outdoor"
-                checked={outdoor}
-                onChange={outdoorHandler}
-            />
+            <Checkbox
+                inputName="wheelchair"
+                isChecked={accessible}
+                onChangeHandler={accessibleHandler}
+            >
+                Wheelchair Accessible
+            </Checkbox>
+            <Checkbox
+                inputName="child-seat"
+                isChecked={child}
+                onChangeHandler={childHandler}
+            >
+                Child Seat
+            </Checkbox>
+            <Checkbox
+                inputName="outdoor"
+                isChecked={outdoor}
+                onChangeHandler={outdoorHandler}
+            >
+                Outdoor Seating
+            </Checkbox>
             <input type="submit" value="Make Your reservation" />
         </form>
     );
