@@ -33,7 +33,26 @@ function ReserveForm() {
             text: '22:00',
             available: true,
         },
-    ]
+    ];
+
+    const event = [
+        {
+            text: "--Select--",
+            available: true,
+        },
+        {
+            text: "Birthday",
+            available: true,
+        },
+        {
+            text: "Anniversary",
+            available: true,
+        },
+        {
+            text: "Engagement",
+            available: true,
+        },
+    ];
 
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
@@ -43,6 +62,14 @@ function ReserveForm() {
     const [child, setChild] = useState(false);
     const [outdoor, setOutdoor] = useState(false);
     const [availableTimes , setAvailableTimes] = useState(times);
+
+    const timeHandler = (e) => {
+        setTime(e.target.value);
+    }
+
+    const eventHandler = (e) => {
+        setOccasion(e.target.value);
+    }
 
     const accessibleHandler = () => {
         setAccessible(!accessible);
@@ -56,13 +83,8 @@ function ReserveForm() {
         setOutdoor(!outdoor);
     }
 
-    const timeHandler = (e) => {
-        setTime(e.target.value);
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(time);
         setDate("");
         setTime("");
         setNumOfGuests("1");
@@ -90,22 +112,6 @@ function ReserveForm() {
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
             />
-            {/* <label htmlFor="res-time">Choose time</label>
-            <select id="res-time" value={time} onChange={timeHandler}
-            >
-                {availableTimes.map((option) => {
-                        if (!option.available) {
-                            return null;
-                        }
-                        return (
-                        <option
-                            key={option.text}
-                            value={option.text}>
-                                {option.text}
-                        </option>
-                    );
-                })}
-            </select> */}
             <SelectBar
                 inputName="res-time"
                 display={time}
@@ -123,16 +129,14 @@ function ReserveForm() {
                 id="guests"
                 onChange={(e) => setNumOfGuests(e.target.value)}
             />
-            <label htmlFor="occasion">Occasion (Optional)</label>
-            <select id="occasion"
-                value={occasion}
-                onChange={(e) => setOccasion(e.target.value)}
+            <SelectBar
+                inputName="occasion"
+                display={occasion}
+                onChangeHandler={eventHandler}
+                options={event}
             >
-                <option>--Select--</option>
-                <option>Birthday</option>
-                <option>Anniversary</option>
-                <option>Engagement</option>
-            </select>
+                Occasion (Optional)
+            </SelectBar>
             <h3>Seating Options (Optional)</h3>
             <Checkbox
                 inputName="wheelchair"
