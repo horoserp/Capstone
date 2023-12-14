@@ -2,14 +2,7 @@ import { useState } from "react";
 
 function ReserveForm() {
 
-    const [date, setDate] = useState("");
-    const [time, setTime] = useState("");
-    const [numOfGuests, setNumOfGuests] = useState("1");
-    const [occasion, setOccasion] = useState("");
-    const [accessible, setAccessible] = useState(false);
-    const [child, setChild] = useState(false);
-    const [outdoor, setOutdoor] = useState(false);
-    const [availableTimes , setAvailableTimes] = useState([
+    const times = [
         {
             text: '--Select--',
             available: true,
@@ -38,7 +31,16 @@ function ReserveForm() {
             text: '22:00',
             available: true,
         },
-    ]);
+    ]
+
+    const [date, setDate] = useState("");
+    const [time, setTime] = useState("");
+    const [numOfGuests, setNumOfGuests] = useState("1");
+    const [occasion, setOccasion] = useState("");
+    const [accessible, setAccessible] = useState(false);
+    const [child, setChild] = useState(false);
+    const [outdoor, setOutdoor] = useState(false);
+    const [availableTimes , setAvailableTimes] = useState(times);
 
     const accessibleHandler = () => {
         setAccessible(!accessible);
@@ -67,7 +69,10 @@ function ReserveForm() {
         setChild(false);
         setOutdoor(false);
         const pos = availableTimes.map(e => e.text).indexOf(time);
-        availableTimes[pos].available = false;
+        if (pos !== -1) {
+            availableTimes[pos].available = false;
+        }
+        setAvailableTimes(availableTimes.filter(times => times.available !== false));
 }
 
 
