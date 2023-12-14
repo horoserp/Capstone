@@ -60,7 +60,6 @@ function ReserveForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(date, time, numOfGuests, occasion, accessible, child, outdoor, availableTimes);
         setDate("");
         setTime("");
         setNumOfGuests("1");
@@ -72,7 +71,7 @@ function ReserveForm() {
         if (pos !== -1) {
             availableTimes[pos].available = false;
         }
-        setAvailableTimes(availableTimes.filter(times => times.available !== false));
+        setAvailableTimes(availableTimes.filter(times => times.available === true));
 }
 
 
