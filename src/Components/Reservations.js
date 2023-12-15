@@ -1,9 +1,44 @@
 import restaurant from "../Images/restaurant.jpg";
 import backButton from "../Images/circle-arrow-left-solid.svg";
 import ReserveForm from "./ReserveForm";
+import { useState } from "react";
 
 function Reservations() {
-    return (
+
+    const times = [
+        {
+            text: '--Select--',
+            available: true,
+        },
+        {
+            text: '17:00',
+            available: true,
+        },
+        {
+            text: '18:00',
+            available: true,
+        },
+        {
+            text: '19:00',
+            available: true,
+        },
+        {
+            text: '20:00',
+            available: true,
+        },
+        {
+            text: '21:00',
+            available: true,
+        },
+        {
+            text: '22:00',
+            available: true,
+        },
+    ];
+
+    const [availableTimes , setAvailableTimes] = useState(times);
+
+return (
         <section>
             <div className="primary-b">
                 <div className="container pad">
@@ -24,7 +59,10 @@ function Reservations() {
                 </div>
             </div>
             <div className="highlight-b pad">
-                <ReserveForm/>
+                <ReserveForm
+                    state={availableTimes}
+                    stateChange={setAvailableTimes}
+                />
             </div>
         </section>
     );

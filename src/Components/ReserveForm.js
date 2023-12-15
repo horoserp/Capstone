@@ -2,38 +2,7 @@ import { useState } from "react";
 import Checkbox from "./Checkbox";
 import SelectBar from "./SelectBar";
 
-function ReserveForm() {
-
-    const times = [
-        {
-            text: '--Select--',
-            available: true,
-        },
-        {
-            text: '17:00',
-            available: true,
-        },
-        {
-            text: '18:00',
-            available: true,
-        },
-        {
-            text: '19:00',
-            available: true,
-        },
-        {
-            text: '20:00',
-            available: true,
-        },
-        {
-            text: '21:00',
-            available: true,
-        },
-        {
-            text: '22:00',
-            available: true,
-        },
-    ];
+function ReserveForm(state, stateChange) {
 
     const event = [
         {
@@ -61,7 +30,9 @@ function ReserveForm() {
     const [accessible, setAccessible] = useState(false);
     const [child, setChild] = useState(false);
     const [outdoor, setOutdoor] = useState(false);
-    const [availableTimes , setAvailableTimes] = useState(times);
+
+    const availableTimes = state.state;
+    const setAvailableTimes = state.stateChange;
 
     const timeHandler = (e) => {
         setTime(e.target.value);
