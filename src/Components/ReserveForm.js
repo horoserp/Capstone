@@ -34,6 +34,11 @@ function ReserveForm(state, stateChange) {
     const availableTimes = state.state;
     const setAvailableTimes = state.stateChange;
 
+    const dateHandler = (e) => {
+        setDate(e.target.value);
+        setAvailableTimes({ type: "updateTimes", selectedDate: date })
+    }
+
     const timeHandler = (e) => {
         setTime(e.target.value);
     }
@@ -63,11 +68,12 @@ function ReserveForm(state, stateChange) {
         setAccessible(false);
         setChild(false);
         setOutdoor(false);
-        const pos = availableTimes.map(e => e.text).indexOf(time);
-        if (pos !== -1) {
-            availableTimes[pos].available = false;
-        }
-        setAvailableTimes(availableTimes.filter(times => times.available === true));
+        console.log(date);
+        // const pos = availableTimes.map(e => e.text).indexOf(time);
+        // if (pos !== -1) {
+        //     availableTimes[pos].available = false;
+        // }
+        // setAvailableTimes(availableTimes.filter(times => times.available === true));
 }
 
 
@@ -81,7 +87,7 @@ function ReserveForm(state, stateChange) {
                 type="date"
                 id="res-date"
                 value={date}
-                onChange={(e) => setDate(e.target.value)}
+                onChange={dateHandler}
             />
             <SelectBar
                 inputName="res-time"
