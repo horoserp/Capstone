@@ -36,7 +36,7 @@ function ReserveForm(state, stateChange) {
 
     const dateHandler = (e) => {
         setDate(e.target.value);
-        setAvailableTimes({ type: "updateTimes", selectedDate: date })
+        setAvailableTimes({ type: "initializeTimes", selectedDate: e.target.value });
     }
 
     const timeHandler = (e) => {
@@ -68,7 +68,6 @@ function ReserveForm(state, stateChange) {
         setAccessible(false);
         setChild(false);
         setOutdoor(false);
-        console.log(date);
         // const pos = availableTimes.map(e => e.text).indexOf(time);
         // if (pos !== -1) {
         //     availableTimes[pos].available = false;

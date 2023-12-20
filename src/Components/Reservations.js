@@ -3,46 +3,58 @@ import backButton from "../Images/circle-arrow-left-solid.svg";
 import ReserveForm from "./ReserveForm";
 import { useReducer } from "react";
 
-const initialTimes = [
-    {
-        text: '--Select--',
-        available: true,
-    },
-    {
-        text: '17:00',
-        available: true,
-    },
-    {
-        text: '18:00',
-        available: true,
-    },
-    {
-        text: '19:00',
-        available: true,
-    },
-    {
-        text: '20:00',
-        available: true,
-    },
-    {
-        text: '21:00',
-        available: true,
-    },
-    {
-        text: '22:00',
-        available: true,
-    },
-];
-
-const reducer = (state, action) => {
-    if (action.type === 'updateTimes') return state.slice(2, 5);
-    if (action.type === 'intializeTimes') return initialTimes;
+const initialTimes = (selectedDate) => {
+    return (
+        [
+            {
+                date: selectedDate,
+                available: [
+                        '--Select--',
+                        '17:00',
+                        '18:00',
+                        '19:00',
+                        '20:00',
+                        '21:00',
+                        '22:00',
+                ]
+            },
+        ]
+    );
 }
 
+const reducer = (state, action) => {
+    switch (action.type) {
+        case "initializeTimes":
+            const match = state.filter(object => object.date === action.selectedDate);
+            if (match.length === 0) {
+                state.push(
+                    {
+                        date: action.selectedDate,
+                        available: [
+                            '--Select--',
+                            '17:00',
+                            '18:00',
+                            '19:00',
+                            '20:00',
+                            '21:00',
+                            '22:00',
+                        ]
+                    }
+                );
+            };
+            return state;
+        case "updateTimes":
+            return state.slice(2,5);
+        default:
+            return state;
+    };
+}
+    // if (action.type === 'updateTimes') return state.slice(2, 5);
+    // if (action.type === 'intializeTimes') return initialTimes;
 
 function Reservations() {
 
-    const [availableTimes , setAvailableTimes] = useReducer(reducer, initialTimes);
+    const [availableTimes , setAvailableTimes] = useReducer(reducer, initialTimes("2023-12-20"));
 
     return (
         <section>
