@@ -8,15 +8,12 @@ function SelectBar({ children, inputName, display, onChangeHandler, options }) {
                 onChange={onChangeHandler}
             >
                 {options.map((option) => {
-                    if(!option.available) {
-                        return null;
-                    }
                     return (
                         <option
-                            key={option.text}
-                            value={option.text}
+                            key={option}
+                            value={option}
                         >
-                            {option.text}
+                            {option}
                         </option>
                     );
                 })}

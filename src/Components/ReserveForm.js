@@ -5,22 +5,10 @@ import SelectBar from "./SelectBar";
 function ReserveForm(state, stateChange) {
 
     const event = [
-        {
-            text: "--Select--",
-            available: true,
-        },
-        {
-            text: "Birthday",
-            available: true,
-        },
-        {
-            text: "Anniversary",
-            available: true,
-        },
-        {
-            text: "Engagement",
-            available: true,
-        },
+        "--Select--",
+        "Birthday",
+        "Anniversary",
+        "Engagement",
     ];
 
     const [date, setDate] = useState("");
@@ -73,8 +61,7 @@ function ReserveForm(state, stateChange) {
         //     availableTimes[pos].available = false;
         // }
         // setAvailableTimes(availableTimes.filter(times => times.available === true));
-}
-
+    }
 
     return (
         <form
@@ -92,7 +79,7 @@ function ReserveForm(state, stateChange) {
                 inputName="res-time"
                 display={time}
                 onChangeHandler={timeHandler}
-                options={availableTimes}
+                options={availableTimes[0].available}
             >
                 Choose Time
             </SelectBar>
