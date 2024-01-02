@@ -49,13 +49,14 @@ function ReserveForm(state, stateChange) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setDate("");
         setTime("");
         setNumOfGuests("1");
         setOccasion("");
         setAccessible(false);
         setChild(false);
         setOutdoor(false);
+        setAvailableTimes({ type: "updateTimes", selectedDate: date });
+        setDate("");
         // const pos = availableTimes.map(e => e.text).indexOf(time);
         // if (pos !== -1) {
         //     availableTimes[pos].available = false;
@@ -122,7 +123,7 @@ function ReserveForm(state, stateChange) {
             >
                 Outdoor Seating
             </Checkbox>
-            <input type="submit" value="Make Your reservation" />
+            <input type="submit" value="Make Your Reservation" />
         </form>
     );
 }

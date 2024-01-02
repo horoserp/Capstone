@@ -23,7 +23,7 @@ const initialTimes = (selectedDate) => {
 }
 
 const reducer = (state, action) => {
-    switch (action.type) {
+        switch (action.type) {
         case "initializeTimes":
             const match = state.filter(object => object.date === action.selectedDate);
             if (match.length === 0) {
@@ -44,13 +44,11 @@ const reducer = (state, action) => {
             };
             return state;
         case "updateTimes":
-            return state.slice(2,5);
+            return state;
         default:
             return state;
     };
 }
-    // if (action.type === 'updateTimes') return state.slice(2, 5);
-    // if (action.type === 'intializeTimes') return initialTimes;
 
 function Reservations() {
 
