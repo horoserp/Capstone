@@ -69,7 +69,7 @@ function ReserveForm(state, stateChange) {
             onSubmit={handleSubmit}
             style={{display: "grid", maxWidth: 200, gap: 20}}
         >
-            <label htmlFor="res-date">Choose date</label>
+            <label htmlFor="res-date">Choose date*</label>
             <input
                 type="date"
                 id="res-date"
@@ -82,9 +82,9 @@ function ReserveForm(state, stateChange) {
                 onChangeHandler={timeHandler}
                 options={availableTimes[0].available}
             >
-                Choose Time
+                Choose Time*
             </SelectBar>
-            <label htmlFor="guests">Number of guests</label>
+            <label htmlFor="guests">Number of guests*</label>
             <input
                 type="number"
                 value={numOfGuests}

@@ -2,6 +2,8 @@ import restaurant from "../Images/restaurant.jpg";
 import backButton from "../Images/circle-arrow-left-solid.svg";
 import ReserveForm from "./ReserveForm";
 import { useReducer } from "react";
+import { useNavigate } from "react-router-dom";
+import BackButton from "./BackButton";
 
 const initialTimes = (selectedDate) => {
     return (
@@ -66,11 +68,7 @@ function Reservations() {
                     <div style={{height: 350, color: '#F4CE14'}}>
                         <h1 style={{}}>Reserve a Table</h1>
                         <h2>(Step 1 of 2)</h2>
-                        <img
-                            src={backButton}
-                            alt={"Left pointing arrow"}
-                            id="icon"
-                        />
+                        <BackButton/>
                     </div>
                 </div>
             </div>
