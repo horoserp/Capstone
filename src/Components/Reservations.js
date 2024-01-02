@@ -1,8 +1,6 @@
 import restaurant from "../Images/restaurant.jpg";
-import backButton from "../Images/circle-arrow-left-solid.svg";
 import ReserveForm from "./ReserveForm";
 import { useReducer } from "react";
-import { useNavigate } from "react-router-dom";
 import BackButton from "./BackButton";
 
 const initialTimes = (selectedDate) => {
