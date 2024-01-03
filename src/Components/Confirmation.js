@@ -8,6 +8,7 @@ function Confirmation() {
     const handleClick = (e) => {
         e.preventDefault();
         navigate("/highlights");
+        window.scrollTo(0,0);
     }
 
     return (

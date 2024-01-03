@@ -60,6 +60,7 @@ function ReserveForm(state, stateChange) {
         setOutdoor(false);
         setAvailableTimes({ type: "updateTimes", selectedDate: date });
         setDate("");
+        window.scrollTo(0,0);
         navigate("/login");
         // const pos = availableTimes.map(e => e.text).indexOf(time);
         // if (pos !== -1) {

@@ -8,12 +8,14 @@ function Login() {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Submitted");
+        window.scrollTo(0,0);
         navigate("/confirmation");
     }
 
     const handleLogin = (e) => {
         e.preventDefault();
         console.log("Logged in");
+        window.scrollTo(0,0);
         navigate("/confirmation");
     }
 
