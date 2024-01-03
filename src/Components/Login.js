@@ -1,14 +1,20 @@
 import Reservations from "./Reservations";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
+
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Submitted");
+        navigate("/confirmation");
     }
 
     const handleLogin = (e) => {
         e.preventDefault();
         console.log("Logged in");
+        navigate("/confirmation");
     }
 
     return (

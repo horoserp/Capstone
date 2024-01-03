@@ -7,6 +7,7 @@ import Highlights from './Components/Highlights';
 import Reservations from './Components/Reservations';
 import OrderOnline from './Components/OrderOnline';
 import Login from './Components/Login';
+import Confirmation from './Components/Confirmation';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/reservations" element={<Reservations>(Step 1 of 2)</Reservations>} />
         <Route path="/orderonline" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/confirmation" element={<Confirmation />} />
       </Routes>
       <div className='primary-b'>
         <Footer/>
