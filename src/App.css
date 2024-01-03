@@ -252,6 +252,10 @@ input, select {
     border-radius: 16px;
 }
 
+.underline {
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
     .container {
         gap: 10px 0;

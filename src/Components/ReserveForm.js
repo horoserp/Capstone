@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Checkbox from "./Checkbox";
 import SelectBar from "./SelectBar";
+import { useNavigate } from "react-router-dom";
 
 function ReserveForm(state, stateChange) {
 
@@ -47,6 +48,8 @@ function ReserveForm(state, stateChange) {
         setOutdoor(!outdoor);
     }
 
+    const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         setTime("");
@@ -57,6 +60,7 @@ function ReserveForm(state, stateChange) {
         setOutdoor(false);
         setAvailableTimes({ type: "updateTimes", selectedDate: date });
         setDate("");
+        navigate("/login");
         // const pos = availableTimes.map(e => e.text).indexOf(time);
         // if (pos !== -1) {
         //     availableTimes[pos].available = false;

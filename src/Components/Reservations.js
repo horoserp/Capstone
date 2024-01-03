@@ -50,7 +50,7 @@ const reducer = (state, action) => {
     };
 }
 
-function Reservations() {
+function Reservations(props) {
 
     const [availableTimes , setAvailableTimes] = useReducer(reducer, initialTimes("2023-12-20"));
 
@@ -65,17 +65,25 @@ function Reservations() {
                     />
                     <div style={{height: 350, color: '#F4CE14'}}>
                         <h1 style={{}}>Reserve a Table</h1>
-                        <h2>(Step 1 of 2)</h2>
+                        <h2>{props.children}</h2>
                         <BackButton/>
                     </div>
                 </div>
             </div>
-            <div className="highlight-b pad">
-                <ReserveForm
-                    state={availableTimes}
-                    stateChange={setAvailableTimes}
-                />
-            </div>
+            {(props.children === "(Step 1 of 2)") ? (
+                <div className="highlight-b pad">
+                    <ReserveForm
+                        state={availableTimes}
+                        stateChange={setAvailableTimes}
+                    />
+                </div>
+            // ) : (props.children === "(Step 2 of 2)") ? (
+            //     <div>Login page</div>
+            // ) : (
+            //     <div>Confirmation page</div>
+            ) : (
+                null
+            )}
         </section>
     );
 }
