@@ -77,10 +77,6 @@ function Reservations(props) {
                         stateChange={setAvailableTimes}
                     />
                 </div>
-            // ) : (props.children === "(Step 2 of 2)") ? (
-            //     <div>Login page</div>
-            // ) : (
-            //     <div>Confirmation page</div>
             ) : (
                 null
             )}
