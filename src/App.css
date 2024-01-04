@@ -294,6 +294,13 @@ input, select {
     text-align: center;
 }
 
+#res-heading {
+    grid-column: 1/4;
+    grid-row: 5/6;
+    margin-top: 25px;
+    text-align: center;
+}
+
 @media (max-width: 600px) {
     .container {
         gap: 10px 0;

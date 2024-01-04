@@ -116,7 +116,7 @@ function ReserveForm(state, stateChange) {
             >
                 Occasion (Optional)
             </SelectBar>
-            <h2 style={{gridColumn: "2/3", gridRow: "5/6"}}>Seating Options (Optional)</h2>
+            <h2 id="res-heading">Seating Options (Optional)</h2>
             <Checkbox
                 inputName="wheelchair"
                 isChecked={accessible}
@@ -152,7 +152,7 @@ function ReserveForm(state, stateChange) {
             </Checkbox>
             <input
                 type="submit"
-                style={{gridColumn: "2/3", gridRow: "8/9"}}
+                style={{gridColumn: "2/3", gridRow: "8/9", marginTop: 30}}
                 value="Make Your Reservation"
             />
         </form>
