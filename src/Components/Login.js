@@ -22,64 +22,74 @@ function Login() {
     return (
         <>
             <Reservations>(Step 2 of 2)</Reservations>
-            <form
-                onSubmit={handleSubmit}
-                style={{display: "grid", maxWidth: 200, gap: 20}}
-            >
-                <p className="underline">
-                   Proceed as Guest
-                </p>
-                <label htmlFor="first-name">First Name*</label>
-                <input
-                    type="text"
-                    id="first-name"
-                    placeholder="First Name"
-                />
-                <label htmlFor="last-name">Last Name*</label>
-                <input
-                    type="text"
-                    id="last-name"
-                    placeholder="Last Name"
-                />
-                <label htmlFor="phone">Phone Number*</label>
-                <input
-                    type="tel"
-                    id="phone"
-                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                    placeholder="123-456-7890"
-                />
-                <label htmlFor="email">Email Address*</label>
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="user@example.com"
-                />
-                <input type="submit" value="Reserve Your Table" />
-            </form>
-            <p>
+            <div className="highlight-b">
+                <form
+                    onSubmit={handleSubmit}
+                    className="grid"
+                >
+                    <h2 className="underline col-2">
+                        Proceed as Guest
+                    </h2>
+                    <label htmlFor="first-name" className="col-1 gap">First Name*</label>
+                    <label htmlFor="last-name" className="col-3 gap">Last Name*</label>
+                    <input
+                        type="text"
+                        id="first-name"
+                        placeholder="First Name"
+                        className="col-1"
+                    />
+                    <input
+                        type="text"
+                        id="last-name"
+                        placeholder="Last Name"
+                        className="col-3"
+                    />
+                    <label htmlFor="phone" className="col-1 gap">Phone Number*</label>
+                    <label htmlFor="email" className="col-3 gap">Email Address*</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        placeholder="123-456-7890"
+                        className="col-1"
+                    />
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="user@example.com"
+                        className="col-3"
+                    />
+                    <input type="submit" className="col-2" value="Reserve Your Table" />
+                </form>
+            </div>
+            <h2 className="underline">
                 -OR-
-            </p>
-            <form
-                onSubmit={handleLogin}
-                style={{display: "grid", maxWidth: 200, gap: 20}}
-            >
-                <p className="underline">
-                    Login
-                </p>
-                <label htmlFor="user-name">User Name*</label>
-                <input
-                    type="text"
-                    id="user-name"
-                    placeholder="User Name"
-                />
-                <label htmlFor="password">Password*</label>
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="Password"
-                />
-                <input type="submit" value="Reserve Your Table" />
-            </form>
+            </h2>
+            <div className="highlight-b">
+                <form
+                    onSubmit={handleLogin}
+                    className="grid"
+                >
+                    <h2 className="underline col-2">
+                        Login
+                    </h2>
+                    <label htmlFor="user-name" className="col-1 gap">User Name*</label>
+                    <label htmlFor="password" className="col-3 gap">Password*</label>
+                    <input
+                        type="text"
+                        id="user-name"
+                        placeholder="User Name"
+                        className="col-1"
+                    />
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        className="col-3"
+                    />
+                    <input type="submit" className="col-2" value="Reserve Your Table" />
+                </form>
+            </div>
         </>
     );
 }
