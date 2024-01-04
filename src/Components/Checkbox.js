@@ -1,11 +1,12 @@
-function Checkbox({ children, inputName, isChecked, onChangeHandler }) {
+function Checkbox({ children, inputName, labelCol, labelRow, selectCol, selectRow, isChecked, onChangeHandler }) {
     return (
         <>
-        <label htmlFor={inputName}>{children}</label>
+        <label htmlFor={inputName} style={{gridColumn: labelCol, gridRow: labelRow, textAlign: "center"}}>{children}</label>
         <input
             type="checkbox"
             id={inputName}
             checked={isChecked}
+            style={{gridColumn: selectCol, gridRow: selectRow}}
             onChange={onChangeHandler}
         />
         </>

@@ -72,12 +72,14 @@ function ReserveForm(state, stateChange) {
     return (
         <form
             onSubmit={handleSubmit}
-            style={{display: "grid", maxWidth: 200, gap: 20}}
+            className="grid"
+            // style={{display: "grid", maxWidth: 200, gap: 20}}
         >
-            <label htmlFor="res-date">Choose date*</label>
+            <label htmlFor="res-date" className="col-1 gap">Choose date*</label>
             <input
                 type="date"
                 id="res-date"
+                className="col-1"
                 value={date}
                 onChange={dateHandler}
             />
@@ -86,16 +88,21 @@ function ReserveForm(state, stateChange) {
                 display={time}
                 onChangeHandler={timeHandler}
                 options={availableTimes[0].available}
+                labelCol="3/4"
+                labelRow="1/2"
+                selectCol="3/4"
+                selectRow="2/3"
             >
                 Choose Time*
             </SelectBar>
-            <label htmlFor="guests">Number of guests*</label>
+            <label htmlFor="guests" className="col-1 gap">Number of guests*</label>
             <input
                 type="number"
                 value={numOfGuests}
                 min="1"
                 max="10"
                 id="guests"
+                className="col-1"
                 onChange={(e) => setNumOfGuests(e.target.value)}
             />
             <SelectBar
@@ -103,13 +110,21 @@ function ReserveForm(state, stateChange) {
                 display={occasion}
                 onChangeHandler={eventHandler}
                 options={event}
+                labelCol="3/4"
+                labelRow="3/4"
+                selectCol="3/4"
+                selectRow="4/5"
             >
                 Occasion (Optional)
             </SelectBar>
-            <h3>Seating Options (Optional)</h3>
+            <h2 style={{gridColumn: "2/3", gridRow: "5/6"}}>Seating Options (Optional)</h2>
             <Checkbox
                 inputName="wheelchair"
                 isChecked={accessible}
+                labelCol="1/2"
+                labelRow="6/7"
+                selectCol="1/2"
+                selectRow="7/8"
                 onChangeHandler={accessibleHandler}
             >
                 Wheelchair Accessible
@@ -117,6 +132,10 @@ function ReserveForm(state, stateChange) {
             <Checkbox
                 inputName="child-seat"
                 isChecked={child}
+                labelCol="2/3"
+                labelRow="6/7"
+                selectCol="2/3"
+                selectRow="7/8"
                 onChangeHandler={childHandler}
             >
                 Child Seat
@@ -124,11 +143,19 @@ function ReserveForm(state, stateChange) {
             <Checkbox
                 inputName="outdoor"
                 isChecked={outdoor}
+                labelCol="3/4"
+                labelRow="6/7"
+                selectCol="3/4"
+                selectRow="7/8"
                 onChangeHandler={outdoorHandler}
             >
                 Outdoor Seating
             </Checkbox>
-            <input type="submit" value="Make Your Reservation" />
+            <input
+                type="submit"
+                style={{gridColumn: "2/3", gridRow: "8/9"}}
+                value="Make Your Reservation"
+            />
         </form>
     );
 }

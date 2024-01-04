@@ -1,10 +1,11 @@
-function SelectBar({ children, inputName, display, onChangeHandler, options }) {
+function SelectBar({ children, inputName, display, labelCol, labelRow, selectCol, selectRow, onChangeHandler, options }) {
     return (
         <>
-            <label htmlFor={inputName}>{children}</label>
+            <label htmlFor={inputName} style={{gridColumn: labelCol, gridRow: labelRow}}>{children}</label>
             <select
                 id={inputName}
                 value={display}
+                style={{gridColumn: selectCol, gridRow: selectRow}}
                 onChange={onChangeHandler}
             >
                 {options.map((option) => {
