@@ -95,7 +95,7 @@ section:first-of-type > div > p {
     border-radius: 16px;
 }
 
-button {
+button, input[type=submit] {
     font-family: 'Karla', sans-serif;
     font-size: 20px;
     font-weight: bold;

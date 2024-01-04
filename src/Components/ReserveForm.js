@@ -73,7 +73,6 @@ function ReserveForm(state, stateChange) {
         <form
             onSubmit={handleSubmit}
             className="grid"
-            // style={{display: "grid", maxWidth: 200, gap: 20}}
         >
             <label htmlFor="res-date" className="col-1 gap">Choose date*</label>
             <input
