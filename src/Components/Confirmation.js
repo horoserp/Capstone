@@ -14,14 +14,17 @@ function Confirmation() {
     return (
         <>
             <Reservations>Success!</Reservations>
-            <p>
-                Contratulations!<br />
-                Reservation Successful<br />
-                You will receive an email confirmation shortly.<br />
-                If you need to make changes to your reservation, please call us directly.<br />
-                We look forward to your visit with us!
-            </p>
-            <button onClick={handleClick}>Explore Our Menu</button>
+            <div className="highlight-b pad">
+                <div className="container flex-dir">
+                    <h2 style={{margin: 0}}>Contratulations!</h2>
+                    <h3>Reservation Successful</h3>
+                    <p className="center">You will receive an email confirmation shortly.<br />
+                        If you need to make changes to your reservation, please call us directly.<br />
+                        We look forward to your visit with us!
+                    </p>
+                    <button onClick={handleClick}>Explore Our Menu</button>
+                </div>
+            </div>
         </>
     );
 }

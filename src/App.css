@@ -286,6 +286,14 @@ input, select {
     margin-bottom: -20px;
 }
 
+.flex-dir {
+    flex-direction: column;
+}
+
+.center {
+    text-align: center;
+}
+
 @media (max-width: 600px) {
     .container {
         gap: 10px 0;
