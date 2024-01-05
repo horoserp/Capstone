@@ -21,7 +21,7 @@ function Login() {
 
     return (
         <>
-            <Reservations>(Step 2 of 2)</Reservations>
+            <Reservations renderButton={true}>(Step 2 of 2)</Reservations>
             <div className="highlight-b">
                 <form
                     onSubmit={handleSubmit}

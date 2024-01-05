@@ -1,7 +1,8 @@
-import restaurant from "../Images/restaurant.jpg";
-import ReserveForm from "./ReserveForm";
 import { useReducer } from "react";
 import BackButton from "./BackButton";
+import ReserveForm from "./ReserveForm";
+import restaurant from "../Images/restaurant.jpg";
+import checkmark from "../Images/circle-check-solid.svg";
 
 const initialTimes = (selectedDate) => {
     return (
@@ -50,6 +51,16 @@ const reducer = (state, action) => {
     };
 }
 
+const success = () => {
+    return (
+        <img
+            src={checkmark}
+            alt={"Black checkmark on yellow circle"}
+            id="icon2"
+        />
+    );
+}
+
 function Reservations(props) {
 
     const [availableTimes , setAvailableTimes] = useReducer(reducer, initialTimes("2023-12-20"));
@@ -66,7 +77,7 @@ function Reservations(props) {
                     <div style={{height: 350, color: '#F4CE14'}}>
                         <h1 style={{}}>Reserve a Table</h1>
                         <h2>{props.children}</h2>
-                        <BackButton/>
+                        {(props.renderButton) ? <BackButton/> : success()}
                     </div>
                 </div>
             </div>

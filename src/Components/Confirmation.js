@@ -13,7 +13,7 @@ function Confirmation() {
 
     return (
         <>
-            <Reservations>Success!</Reservations>
+            <Reservations renderButton={false}>Success!</Reservations>
             <div className="highlight-b pad">
                 <div className="container flex-dir">
                     <h1 style={{margin: 0}}>Contratulations!</h1>

@@ -18,7 +18,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<About />} />
         <Route path="/highlights" element={<Highlights />} />
-        <Route path="/reservations" element={<Reservations>(Step 1 of 2)</Reservations>} />
+        <Route path="/reservations" element={<Reservations renderButton={true}>(Step 1 of 2)</Reservations>} />
         <Route path="/orderonline" element={<OrderOnline />} />
         <Route path="/login" element={<Login />} />
         <Route path="/confirmation" element={<Confirmation />} />

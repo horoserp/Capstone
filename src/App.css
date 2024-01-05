@@ -239,6 +239,15 @@ a > span {
     border-radius: 50px;
 }
 
+#icon2 {
+    display: block;
+    height: 250px;
+    width: 250px;
+    margin: 0 15% 0 15%;
+    background-color: #333333;
+    border-radius: 150px;
+}
+
 form label {
     font-size: 30px;
     margin-bottom: -20px;
