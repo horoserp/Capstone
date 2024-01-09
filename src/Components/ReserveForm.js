@@ -26,6 +26,7 @@ function ReserveForm(state, stateChange) {
     const dateHandler = (e) => {
         setDate(e.target.value);
         setAvailableTimes({ type: "initializeTimes", selectedDate: e.target.value });
+        console.log(availableTimes);
     }
 
     const timeHandler = (e) => {
@@ -86,7 +87,7 @@ function ReserveForm(state, stateChange) {
                 inputName="res-time"
                 display={time}
                 onChangeHandler={timeHandler}
-                options={availableTimes[0].available}
+                options={availableTimes[availableTimes.length - 1].available}
                 labelCol="3/4"
                 labelRow="1/2"
                 selectCol="3/4"

@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import BackButton from "./BackButton";
 import ReserveForm from "./ReserveForm";
+import testAPI from "../Hooks/testAPI";
 import restaurant from "../Images/restaurant.jpg";
 import checkmark from "../Images/circle-check-solid.svg";
 
@@ -9,15 +10,7 @@ const initialTimes = (selectedDate) => {
         [
             {
                 date: selectedDate,
-                available: [
-                        '--Select--',
-                        '17:00',
-                        '18:00',
-                        '19:00',
-                        '20:00',
-                        '21:00',
-                        '22:00',
-                ]
+                available: testAPI.fetchAPI(selectedDate)
             },
         ]
     );
@@ -31,15 +24,7 @@ const reducer = (state, action) => {
                 state.push(
                     {
                         date: action.selectedDate,
-                        available: [
-                            '--Select--',
-                            '17:00',
-                            '18:00',
-                            '19:00',
-                            '20:00',
-                            '21:00',
-                            '22:00',
-                        ]
+                        available: testAPI.fetchAPI(action.selectedDate)
                     }
                 );
             };
@@ -63,7 +48,15 @@ const success = () => {
 
 function Reservations(props) {
 
-    const [availableTimes , setAvailableTimes] = useReducer(reducer, initialTimes("2023-12-20"));
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    //January is 0!
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+
+    const [availableTimes , setAvailableTimes] = useReducer(reducer, initialTimes(today));
 
     return (
         <section>
