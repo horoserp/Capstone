@@ -5,7 +5,7 @@ import testAPI from "../Hooks/testAPI";
 import restaurant from "../Images/restaurant.jpg";
 import checkmark from "../Images/circle-check-solid.svg";
 
-const initialTimes = (selectedDate) => {
+export function initialTimes(selectedDate) {
     return (
         [
             {
