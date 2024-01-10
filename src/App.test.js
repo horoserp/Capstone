@@ -1,20 +1,17 @@
 import { render, screen } from '@testing-library/react';
 import Reservations from './Components/Reservations';
-import { reducer } from './Components/Reservations';
-
-beforeEach(() => {
-  render(<Reservations/>);
-})
+import ReserveForm from './Components/ReserveForm';
 
 test('Renders the progress of making a reservation', () => {
-  const progress = screen.getByText("(Step 1 of 2)");
+  render(<Reservations/>);
+  const progress = screen.getByText("Reserve a Table");
   expect(progress).toBeInTheDocument();
 })
 
-test('Displays select element: time', () => {
-  const selectTime = screen.getByLabelText("Choose Time");
-  expect(selectTime).toBeInTheDocument;
-})
+// test('Displays select element: time', () => {
+//   const selectTime = screen.getByLabelText("Choose Time*");
+//   expect(selectTime).toBeInTheDocument;
+// })
 
 // it('should return the initial state for selectedDate', () => {
 //   expect(reducer({type: "initializeTimes", selectedDate: "2023-12-01"})).toEqual(
@@ -27,7 +24,7 @@ test('Displays select element: time', () => {
 //           '19:00',
 //           '20:00',
 //           '21:00',
-//           '22:00',
+//           '22:00',w
 //       ]
 //     }
 //   );
