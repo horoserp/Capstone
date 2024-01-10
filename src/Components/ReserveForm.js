@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Checkbox from "./Checkbox";
 import SelectBar from "./SelectBar";
-import { useNavigate } from "react-router-dom";
+import testAPI from "../Hooks/testAPI";
 
 function ReserveForm(state, stateChange) {
 
@@ -26,7 +27,6 @@ function ReserveForm(state, stateChange) {
     const dateHandler = (e) => {
         setDate(e.target.value);
         setAvailableTimes({ type: "initializeTimes", selectedDate: e.target.value });
-        console.log(availableTimes);
     }
 
     const timeHandler = (e) => {
@@ -53,16 +53,30 @@ function ReserveForm(state, stateChange) {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setTime("");
-        setNumOfGuests("1");
-        setOccasion("");
-        setAccessible(false);
-        setChild(false);
-        setOutdoor(false);
-        setAvailableTimes({ type: "updateTimes", selectedDate: date });
-        setDate("");
-        window.scrollTo(0,0);
-        navigate("/login");
+        const formData = {
+            date: date,
+            time: time,
+            numOfGuests: numOfGuests,
+            occasion: occasion,
+            accessible: accessible,
+            child: child,
+            outdoor: outdoor
+        };
+        const success = testAPI.submitAPI(formData);
+        if (success) {
+            setTime("");
+            setNumOfGuests("1");
+            setOccasion("");
+            setAccessible(false);
+            setChild(false);
+            setOutdoor(false);
+            setAvailableTimes({ type: "updateTimes", selectedDate: date });
+            setDate("");
+            window.scrollTo(0,0);
+            navigate("/login");
+        } else {
+            console.log("Failure");
+        }
         // const pos = availableTimes.map(e => e.text).indexOf(time);
         // if (pos !== -1) {
         //     availableTimes[pos].available = false;
