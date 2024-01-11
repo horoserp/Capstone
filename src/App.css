@@ -254,7 +254,7 @@ form label {
 }
 
 input, select {
-    height: 40px;
+    min-height: 40px;
     font-size: 30px;
     text-align: center;
     background-color: #F4CE14;
@@ -315,7 +315,7 @@ input:not(:focus):not(:placeholder-shown):invalid {
 }
 
 input:not(:focus):not(:placeholder-shown):valid {
-    border: 3px solid #495E57;
+    border: 5px solid #495E57;
 }
 
 @media (max-width: 600px) {

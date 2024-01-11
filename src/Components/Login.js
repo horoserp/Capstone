@@ -94,7 +94,12 @@ function Login() {
                         minLength={5}
                         required
                     />
-                    <input type="submit" className="col-2" value="Reserve Your Table" />
+                    <input
+                        type="submit"
+                        id="submit-login"
+                        className="col-2"
+                        value="Reserve Your Table"
+                        />
                 </form>
             </div>
         </>
