@@ -35,12 +35,14 @@ function Login() {
                         id="first-name"
                         placeholder="First Name"
                         className="col-1"
+                        required
                     />
                     <input
                         type="text"
                         id="last-name"
                         placeholder="Last Name"
                         className="col-3"
+                        required
                     />
                     <label htmlFor="phone" className="col-1 gap">Phone Number*</label>
                     <label htmlFor="email" className="col-3 gap">Email Address*</label>
@@ -50,12 +52,14 @@ function Login() {
                         pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                         placeholder="123-456-7890"
                         className="col-1"
+                        required
                     />
                     <input
                         type="email"
                         id="email"
                         placeholder="user@example.com"
                         className="col-3"
+                        required
                     />
                     <input type="submit" className="col-2" value="Reserve Your Table" />
                 </form>
@@ -78,12 +82,17 @@ function Login() {
                         id="user-name"
                         placeholder="User Name"
                         className="col-1"
+                        minLength={3}
+                        maxLength={15}
+                        required
                     />
                     <input
                         type="password"
                         id="password"
                         placeholder="Password"
                         className="col-3"
+                        minLength={5}
+                        required
                     />
                     <input type="submit" className="col-2" value="Reserve Your Table" />
                 </form>

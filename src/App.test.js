@@ -18,5 +18,3 @@ test('fetchAPI returns a non-empty array of booking times', () => {
   const result = testAPI.fetchAPI("2024-01-10");
   expect(result).not.toHaveLength(0);
 })
-
-// Write test for initializeTimes and updateTimes
