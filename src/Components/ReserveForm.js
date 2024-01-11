@@ -15,7 +15,7 @@ function ReserveForm(state, stateChange) {
 
     const [date, setDate] = useState("");
     const [time, setTime] = useState("");
-    const [numOfGuests, setNumOfGuests] = useState("1");
+    const [numOfGuests, setNumOfGuests] = useState("");
     const [occasion, setOccasion] = useState("");
     const [accessible, setAccessible] = useState(false);
     const [child, setChild] = useState(false);
@@ -96,6 +96,7 @@ function ReserveForm(state, stateChange) {
                 className="col-1"
                 value={date}
                 onChange={dateHandler}
+                required
             />
             <SelectBar
                 inputName="res-time"
@@ -106,6 +107,7 @@ function ReserveForm(state, stateChange) {
                 labelRow="1/2"
                 selectCol="3/4"
                 selectRow="2/3"
+                required
             >
                 Choose Time*
             </SelectBar>
@@ -117,7 +119,9 @@ function ReserveForm(state, stateChange) {
                 max="10"
                 id="guests"
                 className="col-1"
+                placeholder="Select"
                 onChange={(e) => setNumOfGuests(e.target.value)}
+                required
             />
             <SelectBar
                 inputName="occasion"

@@ -314,6 +314,10 @@ input:not(:focus):not(:placeholder-shown):invalid {
     border: 3px solid red;
 }
 
+input:not(:focus):not(:placeholder-shown):valid {
+    border: 3px solid #495E57;
+}
+
 @media (max-width: 600px) {
     .container {
         gap: 10px 0;
