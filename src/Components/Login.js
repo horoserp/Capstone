@@ -1,9 +1,31 @@
 import { useNavigate } from "react-router-dom";
+import { useFormik } from "formik";
+import * as Yup from 'yup';
 import Reservations from "./Reservations";
 
 function Login() {
 
     const navigate = useNavigate();
+
+    const loginValidate = Yup.object().shape({
+        userName: Yup.string()
+            .min(8, "Minimum 8 characters")
+            .required("User Name is Required"),
+        password: Yup.string()
+            .min(10, "Minimum 10 characters")
+            .required("Password is Required"),
+    });
+
+    const loginFormik = useFormik ({
+        initialValues: {
+            userName: '',
+            password: '',
+        },
+        onSubmit: values => {
+            console.log(values);
+        },
+        validationSchema: loginValidate
+    });
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -69,35 +91,40 @@ function Login() {
             </h2>
             <div className="highlight-b">
                 <form
-                    onSubmit={handleLogin}
-                    className="grid"
+                    onSubmit={loginFormik.handleSubmit}
                 >
                     <h2 className="underline col-2">
                         Login
                     </h2>
-                    <label htmlFor="user-name" className="col-1 gap">User Name*</label>
-                    <label htmlFor="password" className="col-3 gap">Password*</label>
+                    <label htmlFor="userName">User Name*</label>
                     <input
                         type="text"
-                        id="user-name"
+                        id="userName"
+                        name="userName"
                         placeholder="User Name"
-                        className="col-1"
-                        minLength={3}
-                        maxLength={15}
-                        required
+                        onChange={loginFormik.handleChange}
+                        onBlur={loginFormik.handleBlur}
+                        value={loginFormik.values.userName}
                     />
+                    {loginFormik.touched.userName && loginFormik.errors.userName ? (
+                        <div>{loginFormik.errors.userName}</div>
+                        ) : null}
+                    <label htmlFor="password">Password*</label>
                     <input
                         type="password"
                         id="password"
+                        name="password"
                         placeholder="Password"
-                        className="col-3"
-                        minLength={5}
-                        required
+                        onChange={loginFormik.handleChange}
+                        onBlur={loginFormik.handleBlur}
+                        value={loginFormik.values.password}
                     />
+                    {loginFormik.touched.password && loginFormik.errors.password ? (
+                        <div>{loginFormik.errors.password}</div>
+                        ) : null}
                     <input
                         type="submit"
                         id="submit-login"
-                        className="col-2"
                         value="Reserve Your Table"
                         />
                 </form>
