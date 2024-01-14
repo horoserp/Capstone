@@ -23,17 +23,13 @@ function Login() {
         },
         onSubmit: values => {
             console.log(values);
+            window.scrollTo(0,0);
+            navigate("/confirmation");
         },
         validationSchema: loginValidate
     });
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        window.scrollTo(0,0);
-        navigate("/confirmation");
-    }
-
-    const handleLogin = (e) => {
         e.preventDefault();
         window.scrollTo(0,0);
         navigate("/confirmation");
@@ -93,10 +89,16 @@ function Login() {
                 <form
                     onSubmit={loginFormik.handleSubmit}
                 >
-                    <h2 className="underline col-2">
+                    <div className="container flex-dir">
+                    <h2 className="underline" style={{marginTop: 20, marginBottom: 20}}>
                         Login
                     </h2>
-                    <label htmlFor="userName">User Name*</label>
+                    <label
+                        htmlFor="userName"
+                        style={{marginBottom: 0}}
+                    >
+                        User Name*
+                    </label>
                     <input
                         type="text"
                         id="userName"
@@ -105,11 +107,17 @@ function Login() {
                         onChange={loginFormik.handleChange}
                         onBlur={loginFormik.handleBlur}
                         value={loginFormik.values.userName}
+                        style={{marginBottom: 20}}
                     />
                     {loginFormik.touched.userName && loginFormik.errors.userName ? (
-                        <div>{loginFormik.errors.userName}</div>
+                        <div style={{marginTop: -20}}>{loginFormik.errors.userName}</div>
                         ) : null}
-                    <label htmlFor="password">Password*</label>
+                    <label
+                        htmlFor="password"
+                        style={{marginBottom: 0}}
+                    >
+                        Password*
+                    </label>
                     <input
                         type="password"
                         id="password"
@@ -118,15 +126,18 @@ function Login() {
                         onChange={loginFormik.handleChange}
                         onBlur={loginFormik.handleBlur}
                         value={loginFormik.values.password}
+                        style={{marginBottom: 20}}
                     />
                     {loginFormik.touched.password && loginFormik.errors.password ? (
-                        <div>{loginFormik.errors.password}</div>
+                        <div style={{marginTop: -20}}>{loginFormik.errors.password}</div>
                         ) : null}
                     <input
                         type="submit"
                         id="submit-login"
                         value="Reserve Your Table"
-                        />
+                        style={{marginBottom: 40, marginTop: 20}}
+                    />
+                    </div>
                 </form>
             </div>
         </>
