@@ -17,6 +17,7 @@ function Login() {
     });
 
     const loginFormik = useFormik ({
+        validateOnMount: true,
         initialValues: {
             userName: '',
             password: '',
@@ -136,6 +137,7 @@ function Login() {
                         id="submit-login"
                         value="Reserve Your Table"
                         style={{marginBottom: 40, marginTop: 20}}
+                        disabled={!loginFormik.isValid}
                     />
                     </div>
                 </form>
