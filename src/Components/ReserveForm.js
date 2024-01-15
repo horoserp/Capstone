@@ -24,6 +24,13 @@ function ReserveForm(state, stateChange) {
     const availableTimes = state.state;
     const setAvailableTimes = state.stateChange;
 
+    const submitIsValid =
+        (date !== "") &&
+        (time !== "") &&
+        (numOfGuests > 0);
+
+    const timeIsDisabled = (date !== "");
+
     const dateHandler = (e) => {
         setDate(e.target.value);
         setAvailableTimes({ type: "initializeTimes", selectedDate: e.target.value });
@@ -108,8 +115,9 @@ function ReserveForm(state, stateChange) {
                 selectCol="3/4"
                 selectRow="2/3"
                 required
+                isDisabled={!timeIsDisabled}
             >
-                Choose Time*
+                Choose Time* (Pick a date first!)
             </SelectBar>
             <label htmlFor="guests" className="col-1 gap">Number of guests*</label>
             <input
@@ -173,7 +181,8 @@ function ReserveForm(state, stateChange) {
                 type="submit"
                 style={{gridColumn: "2/3", gridRow: "8/9", marginTop: 30}}
                 value="Make Your Reservation"
-            />
+                disabled={!submitIsValid}
+                />
         </form>
     );
 }
