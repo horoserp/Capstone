@@ -310,20 +310,18 @@ input, select {
     text-align: center;
 }
 
-/* input:not(:focus):not(:placeholder-shown):invalid {
-    border: 3px solid red;
-}
-
-input:not(:focus):not(:placeholder-shown):valid {
-    border: 5px solid #495E57;
-} */
-
 input:disabled {
     border: 3px solid red;
 }
 
 input[type=submit]:not(:disabled) {
     border: 5px solid #495E57;
+}
+
+.error {
+    color: red;
+    font-size: x-large;
+    text-align: center;
 }
 
 @media (max-width: 600px) {

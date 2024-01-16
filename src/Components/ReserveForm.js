@@ -20,6 +20,7 @@ function ReserveForm(state, stateChange) {
     const [accessible, setAccessible] = useState(false);
     const [child, setChild] = useState(false);
     const [outdoor, setOutdoor] = useState(false);
+    const [dateValidating, setDateValidating] = useState(false);
 
     const availableTimes = state.state;
     const setAvailableTimes = state.stateChange;
@@ -30,6 +31,19 @@ function ReserveForm(state, stateChange) {
         (numOfGuests > 0);
 
     const timeIsDisabled = (date !== "");
+
+    const handleDateBlur = () => {
+        setDateValidating(true);
+    }
+
+    const dateError = () => {
+        if(dateValidating && date === "") {
+            return (
+                <div className="col-1 error">Please enter a date</div>
+            );
+        }
+        return "Choose date*";
+    }
 
     const dateHandler = (e) => {
         setDate(e.target.value);
@@ -96,13 +110,14 @@ function ReserveForm(state, stateChange) {
             onSubmit={handleSubmit}
             className="grid"
         >
-            <label htmlFor="res-date" className="col-1 gap">Choose date*</label>
+            <label htmlFor="res-date" className="col-1 gap">{dateError()}</label>
             <input
                 type="date"
                 id="res-date"
                 className="col-1"
                 value={date}
                 onChange={dateHandler}
+                onBlur={handleDateBlur}
                 required
             />
             <SelectBar
