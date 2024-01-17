@@ -21,6 +21,8 @@ function ReserveForm(state, stateChange) {
     const [child, setChild] = useState(false);
     const [outdoor, setOutdoor] = useState(false);
     const [dateValidating, setDateValidating] = useState(false);
+    const [timeValidating, setTimeValidating] = useState(false);
+    const [guestValidating, setGuestValidating] = useState(false);
 
     const availableTimes = state.state;
     const setAvailableTimes = state.stateChange;
@@ -39,10 +41,44 @@ function ReserveForm(state, stateChange) {
     const dateError = () => {
         if(dateValidating && date === "") {
             return (
-                <div className="col-1 error">Please enter a date</div>
+                <div className="col-1 error">Please enter a valid date</div>
             );
         }
         return "Choose date*";
+    }
+
+    const handleTimeBlur = () => {
+        setTimeValidating(true);
+    }
+
+    const timeError = () => {
+        if(timeValidating && time === "") {
+            return (
+                <div className="col-2 error">Please pick a time</div>
+            );
+        }
+        return "Choose Time* (Pick a date first!)";
+    }
+
+    const handleGuestBlur = () => {
+        setGuestValidating(true);
+    }
+
+    const guestError = () => {
+        if(guestValidating && numOfGuests === "") {
+            return (
+                <div className="col-1 error">Please enter the number of guests</div>
+            );
+        } else if (guestValidating && numOfGuests < 1) {
+            return (
+                <div className="col-1 error">You must have at least 1 guest</div>
+            );
+        } else if (guestValidating && numOfGuests > 10) {
+            return (
+                <div className="col-1 error">You can not have more than 10 guests</div>
+            );
+        }
+        return "Number of guests*";
     }
 
     const dateHandler = (e) => {
@@ -124,6 +160,7 @@ function ReserveForm(state, stateChange) {
                 inputName="res-time"
                 display={time}
                 onChangeHandler={timeHandler}
+                onBlur={handleTimeBlur}
                 options={availableTimes[availableTimes.length - 1].available}
                 labelCol="3/4"
                 labelRow="1/2"
@@ -132,9 +169,9 @@ function ReserveForm(state, stateChange) {
                 required
                 isDisabled={!timeIsDisabled}
             >
-                Choose Time* (Pick a date first!)
+                {timeError()}
             </SelectBar>
-            <label htmlFor="guests" className="col-1 gap">Number of guests*</label>
+            <label htmlFor="guests" className="col-1 gap">{guestError()}</label>
             <input
                 type="number"
                 value={numOfGuests}
@@ -144,6 +181,7 @@ function ReserveForm(state, stateChange) {
                 className="col-1"
                 placeholder="Select"
                 onChange={(e) => setNumOfGuests(e.target.value)}
+                onBlur={handleGuestBlur}
                 required
             />
             <SelectBar
