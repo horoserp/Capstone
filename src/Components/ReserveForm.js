@@ -30,6 +30,7 @@ function ReserveForm(state, stateChange) {
     const submitIsValid =
         (date !== "") &&
         (time !== "") &&
+        (time !== "--Select a Time--") &&
         (numOfGuests > 0);
 
     const timeIsDisabled = (date !== "");
@@ -52,7 +53,7 @@ function ReserveForm(state, stateChange) {
     }
 
     const timeError = () => {
-        if(timeValidating && time === "") {
+        if(timeValidating && (time === "" || time === "--Select a Time--")) {
             return (
                 <div className="col-2 error">Please pick a time</div>
             );
