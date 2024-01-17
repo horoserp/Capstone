@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Checkbox from "./Checkbox";
 import SelectBar from "./SelectBar";
 import testAPI from "../Hooks/testAPI";
@@ -107,8 +106,6 @@ function ReserveForm(state, stateChange) {
         setOutdoor(!outdoor);
     }
 
-    const navigate = useNavigate();
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const formData = {
@@ -131,7 +128,7 @@ function ReserveForm(state, stateChange) {
             setAvailableTimes({ type: "updateTimes", selectedDate: date });
             setDate("");
             window.scrollTo(0,0);
-            navigate("/login");
+            window.location.href="/login";
         } else {
             console.log("Failure");
         }
@@ -156,6 +153,7 @@ function ReserveForm(state, stateChange) {
                 onChange={dateHandler}
                 onBlur={handleDateBlur}
                 required
+                aria-required="true"
             />
             <SelectBar
                 inputName="res-time"
@@ -168,6 +166,7 @@ function ReserveForm(state, stateChange) {
                 selectCol="3/4"
                 selectRow="2/3"
                 required
+                aria-required="true"
                 isDisabled={!timeIsDisabled}
             >
                 {timeError()}
@@ -183,6 +182,7 @@ function ReserveForm(state, stateChange) {
                 placeholder="Select"
                 onChange={(e) => setNumOfGuests(e.target.value)}
                 onBlur={handleGuestBlur}
+                aria-required="true"
                 required
             />
             <SelectBar
@@ -197,45 +197,51 @@ function ReserveForm(state, stateChange) {
             >
                 Occasion (Optional)
             </SelectBar>
-            <h2 id="res-heading">Seating Options (Optional)</h2>
-            <Checkbox
-                inputName="wheelchair"
-                isChecked={accessible}
-                labelCol="1/2"
-                labelRow="6/7"
-                selectCol="1/2"
-                selectRow="7/8"
-                onChangeHandler={accessibleHandler}
-            >
-                Wheelchair Accessible
-            </Checkbox>
-            <Checkbox
-                inputName="child-seat"
-                isChecked={child}
-                labelCol="2/3"
-                labelRow="6/7"
-                selectCol="2/3"
-                selectRow="7/8"
-                onChangeHandler={childHandler}
-            >
-                Child Seat
-            </Checkbox>
-            <Checkbox
-                inputName="outdoor"
-                isChecked={outdoor}
-                labelCol="3/4"
-                labelRow="6/7"
-                selectCol="3/4"
-                selectRow="7/8"
-                onChangeHandler={outdoorHandler}
-            >
-                Outdoor Seating
-            </Checkbox>
+            <fieldset id="res-heading">
+                <legend>Seating Options</legend>
+                <div className="grid">
+                    <Checkbox
+                        inputName="wheelchair"
+                        isChecked={accessible}
+                        labelCol="1/2"
+                        labelRow="1/2"
+                        selectCol="1/2"
+                        selectRow="2/3"
+                        onChangeHandler={accessibleHandler}
+                    >
+                        Wheelchair Accessible
+                    </Checkbox>
+                    <Checkbox
+                        inputName="child-seat"
+                        isChecked={child}
+                        labelCol="2/3"
+                        labelRow="1/2"
+                        selectCol="2/3"
+                        selectRow="2/3"
+                        onChangeHandler={childHandler}
+                    >
+                        Child Seat
+                    </Checkbox>
+                    <Checkbox
+                        inputName="outdoor"
+                        isChecked={outdoor}
+                        labelCol="3/4"
+                        labelRow="1/2"
+                        selectCol="3/4"
+                        selectRow="2/3"
+                        onChangeHandler={outdoorHandler}
+                    >
+                        Outdoor Seating
+                    </Checkbox>
+                </div>
+            </fieldset>
             <input
                 type="submit"
+                data-testid="submit-button"
                 style={{gridColumn: "2/3", gridRow: "8/9", marginTop: 30}}
                 value="Make Your Reservation"
                 disabled={!submitIsValid}
+                aria-label="On Click"
                 />
         </form>
     );

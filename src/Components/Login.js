@@ -63,97 +63,106 @@ function Login() {
     return (
         <>
             <Reservations renderButton={true}>(Step 2 of 2)</Reservations>
-            <div className="highlight-b">
+            <div className="highlight-b" style={{paddingTop: 20}}>
                 <form
                     onSubmit={guestFormik.handleSubmit}
                 >
-                    <div className="container flex-dir">
-                        <h2 className="underline" style={{marginTop: 20, marginBottom: 20}}>
-                            Proceed as Guest
-                        </h2>
-                        <label
-                            htmlFor="firstName"
-                            style={{marginBottom: 0}}
-                        >
-                            First Name*
-                        </label>
-                        <input
-                            type="text"
-                            id="firstName"
-                            name="firstName"
-                            placeholder="First Name"
-                            onChange={guestFormik.handleChange}
-                            onBlur={guestFormik.handleBlur}
-                            value={guestFormik.values.userName}
-                            style={{marginBottom: 20}}
-                        />
-                        {guestFormik.touched.firstName && guestFormik.errors.firstName ? (
-                            <div style={{marginTop: -20}}>{guestFormik.errors.firstName}</div>
-                            ) : null}
-                        <label
-                            htmlFor="lastName"
-                            style={{marginBottom: 0}}
-                        >
-                            Last Name*
-                        </label>
-                        <input
-                            type="text"
-                            id="lastName"
-                            name="lastName"
-                            placeholder="Last Name"
-                            onChange={guestFormik.handleChange}
-                            onBlur={guestFormik.handleBlur}
-                            value={guestFormik.values.userName}
-                            style={{marginBottom: 20}}
-                        />
-                        {guestFormik.touched.lastName && guestFormik.errors.lastName ? (
-                            <div style={{marginTop: -20}}>{guestFormik.errors.lastName}</div>
-                            ) : null}
-                        <label
-                            htmlFor="phone"
-                            style={{marginBottom: 0}}
-                        >
-                            Phone Number*
-                        </label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="123-456-7890"
-                            onChange={guestFormik.handleChange}
-                            onBlur={guestFormik.handleBlur}
-                            value={guestFormik.values.userName}
-                            style={{marginBottom: 20}}
-                        />
-                        {guestFormik.touched.phone && guestFormik.errors.phone ? (
-                            <div style={{marginTop: -20}}>{guestFormik.errors.phone}</div>
-                            ) : null}
-                        <label
-                            htmlFor="email"
-                            style={{marginBottom: 0}}
-                        >
-                            Email Address*
-                        </label>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="user@example.com"
-                            onChange={guestFormik.handleChange}
-                            onBlur={guestFormik.handleBlur}
-                            value={guestFormik.values.userName}
-                            style={{marginBottom: 20}}
-                        />
-                        {guestFormik.touched.email && guestFormik.errors.email ? (
-                            <div style={{marginTop: -20}}>{guestFormik.errors.email}</div>
-                            ) : null}
-                        <input
-                            type="submit"
-                            value="Reserve Your Table"
-                            style={{marginBottom: 40, marginTop: 20}}
-                            disabled={!guestFormik.isValid}
-                        />
-                    </div>
+                    <fieldset>
+                        <legend className="center underline" style={{fontSize: "xx-large"}}>Proceed as Guest</legend>
+                        <div className="container flex-dir">
+                            <label
+                                htmlFor="firstName"
+                                style={{marginBottom: 0}}
+                            >
+                                First Name*
+                            </label>
+                            <input
+                                type="text"
+                                id="firstName"
+                                name="firstName"
+                                placeholder="First Name"
+                                onChange={guestFormik.handleChange}
+                                onBlur={guestFormik.handleBlur}
+                                value={guestFormik.values.userName}
+                                style={{marginBottom: 20}}
+                                required
+                                aria-required="true"
+                                />
+                            {guestFormik.touched.firstName && guestFormik.errors.firstName ? (
+                                <div style={{marginTop: -20}}>{guestFormik.errors.firstName}</div>
+                                ) : null}
+                            <label
+                                htmlFor="lastName"
+                                style={{marginBottom: 0}}
+                            >
+                                Last Name*
+                            </label>
+                            <input
+                                type="text"
+                                id="lastName"
+                                name="lastName"
+                                placeholder="Last Name"
+                                onChange={guestFormik.handleChange}
+                                onBlur={guestFormik.handleBlur}
+                                value={guestFormik.values.userName}
+                                style={{marginBottom: 20}}
+                                required
+                                aria-required="true"
+                            />
+                            {guestFormik.touched.lastName && guestFormik.errors.lastName ? (
+                                <div style={{marginTop: -20}}>{guestFormik.errors.lastName}</div>
+                                ) : null}
+                            <label
+                                htmlFor="phone"
+                                style={{marginBottom: 0}}
+                            >
+                                Phone Number*
+                            </label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="123-456-7890"
+                                onChange={guestFormik.handleChange}
+                                onBlur={guestFormik.handleBlur}
+                                value={guestFormik.values.userName}
+                                style={{marginBottom: 20}}
+                                required
+                                aria-required="true"
+                            />
+                            {guestFormik.touched.phone && guestFormik.errors.phone ? (
+                                <div style={{marginTop: -20}}>{guestFormik.errors.phone}</div>
+                                ) : null}
+                            <label
+                                htmlFor="email"
+                                style={{marginBottom: 0}}
+                            >
+                                Email Address*
+                            </label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="user@example.com"
+                                onChange={guestFormik.handleChange}
+                                onBlur={guestFormik.handleBlur}
+                                value={guestFormik.values.userName}
+                                style={{marginBottom: 20}}
+                                required
+                                aria-required="true"
+                            />
+                            {guestFormik.touched.email && guestFormik.errors.email ? (
+                                <div style={{marginTop: -20}}>{guestFormik.errors.email}</div>
+                                ) : null}
+                            <input
+                                type="submit"
+                                value="Reserve Your Table"
+                                style={{marginBottom: 40, marginTop: 20}}
+                                aria-label="On Click"
+                                disabled={!guestFormik.isValid}
+                            />
+                        </div>
+                    </fieldset>
                 </form>
             </div>
             <h2 className="underline">
@@ -163,56 +172,61 @@ function Login() {
                 <form
                     onSubmit={loginFormik.handleSubmit}
                 >
-                    <div className="container flex-dir">
-                        <h2 className="underline" style={{marginTop: 20, marginBottom: 20}}>
-                            Login
-                        </h2>
-                        <label
-                            htmlFor="userName"
-                            style={{marginBottom: 0}}
-                        >
-                            User Name*
-                        </label>
-                        <input
-                            type="text"
-                            id="userName"
-                            name="userName"
-                            placeholder="User Name"
-                            onChange={loginFormik.handleChange}
-                            onBlur={loginFormik.handleBlur}
-                            value={loginFormik.values.userName}
-                            style={{marginBottom: 20}}
-                        />
-                        {loginFormik.touched.userName && loginFormik.errors.userName ? (
-                            <div style={{marginTop: -20}}>{loginFormik.errors.userName}</div>
-                            ) : null}
-                        <label
-                            htmlFor="password"
-                            style={{marginBottom: 0}}
-                        >
-                            Password*
-                        </label>
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            placeholder="Password"
-                            onChange={loginFormik.handleChange}
-                            onBlur={loginFormik.handleBlur}
-                            value={loginFormik.values.password}
-                            style={{marginBottom: 20}}
-                        />
-                        {loginFormik.touched.password && loginFormik.errors.password ? (
-                            <div style={{marginTop: -20}}>{loginFormik.errors.password}</div>
-                            ) : null}
-                        <input
-                            type="submit"
-                            id="submit-login"
-                            value="Reserve Your Table"
-                            style={{marginBottom: 40, marginTop: 20}}
-                            disabled={!loginFormik.isValid}
-                        />
-                    </div>
+                    <fieldset>
+                        <legend className="center underline" style={{fontSize: "xx-large"}}>Login</legend>
+                        <div className="container flex-dir">
+                            <label
+                                htmlFor="userName"
+                                style={{marginBottom: 0}}
+                            >
+                                User Name*
+                            </label>
+                            <input
+                                type="text"
+                                id="userName"
+                                name="userName"
+                                placeholder="User Name"
+                                onChange={loginFormik.handleChange}
+                                onBlur={loginFormik.handleBlur}
+                                value={loginFormik.values.userName}
+                                style={{marginBottom: 20}}
+                                required
+                                aria-required="true"
+                            />
+                            {loginFormik.touched.userName && loginFormik.errors.userName ? (
+                                <div style={{marginTop: -20}}>{loginFormik.errors.userName}</div>
+                                ) : null}
+                            <label
+                                htmlFor="password"
+                                style={{marginBottom: 0}}
+                            >
+                                Password*
+                            </label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Password"
+                                onChange={loginFormik.handleChange}
+                                onBlur={loginFormik.handleBlur}
+                                value={loginFormik.values.password}
+                                style={{marginBottom: 20}}
+                                required
+                                aria-required="true"
+                            />
+                            {loginFormik.touched.password && loginFormik.errors.password ? (
+                                <div style={{marginTop: -20}}>{loginFormik.errors.password}</div>
+                                ) : null}
+                            <input
+                                type="submit"
+                                id="submit-login"
+                                value="Reserve Your Table"
+                                style={{marginBottom: 40, marginTop: 20}}
+                                aria-label="On Click"
+                                disabled={!loginFormik.isValid}
+                            />
+                        </div>
+                    </fieldset>
                 </form>
             </div>
         </>
