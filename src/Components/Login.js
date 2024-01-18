@@ -37,10 +37,10 @@ function Login() {
         lastName: Yup.string()
             .required("Last name is required"),
         phone: Yup.string()
-            .matches(phoneRegExp, "Phone number is not valid")
+            .matches(phoneRegExp, "Phone number must match 123-456-7890")
             .required("Phone number is required"),
         email: Yup.string()
-            .email("Invalid email address")
+            .email("Invalid email address: user@example.com")
             .required("Email is required"),
     });
 
@@ -89,7 +89,7 @@ function Login() {
                                 aria-required="true"
                                 />
                             {guestFormik.touched.firstName && guestFormik.errors.firstName ? (
-                                <div style={{marginTop: -20}}>{guestFormik.errors.firstName}</div>
+                                <div style={{marginTop: -20, color: "red"}}>{guestFormik.errors.firstName}</div>
                                 ) : null}
                             <label
                                 htmlFor="lastName"
@@ -110,7 +110,7 @@ function Login() {
                                 aria-required="true"
                             />
                             {guestFormik.touched.lastName && guestFormik.errors.lastName ? (
-                                <div style={{marginTop: -20}}>{guestFormik.errors.lastName}</div>
+                                <div style={{marginTop: -20, color: "red"}}>{guestFormik.errors.lastName}</div>
                                 ) : null}
                             <label
                                 htmlFor="phone"
@@ -131,7 +131,7 @@ function Login() {
                                 aria-required="true"
                             />
                             {guestFormik.touched.phone && guestFormik.errors.phone ? (
-                                <div style={{marginTop: -20}}>{guestFormik.errors.phone}</div>
+                                <div style={{marginTop: -20, color: "red"}}>{guestFormik.errors.phone}</div>
                                 ) : null}
                             <label
                                 htmlFor="email"
@@ -152,7 +152,7 @@ function Login() {
                                 aria-required="true"
                             />
                             {guestFormik.touched.email && guestFormik.errors.email ? (
-                                <div style={{marginTop: -20}}>{guestFormik.errors.email}</div>
+                                <div style={{marginTop: -20, color: "red"}}>{guestFormik.errors.email}</div>
                                 ) : null}
                             <input
                                 type="submit"
@@ -194,7 +194,7 @@ function Login() {
                                 aria-required="true"
                             />
                             {loginFormik.touched.userName && loginFormik.errors.userName ? (
-                                <div style={{marginTop: -20}}>{loginFormik.errors.userName}</div>
+                                <div style={{marginTop: -20, color: "red"}}>{loginFormik.errors.userName}</div>
                                 ) : null}
                             <label
                                 htmlFor="password"
@@ -215,7 +215,7 @@ function Login() {
                                 aria-required="true"
                             />
                             {loginFormik.touched.password && loginFormik.errors.password ? (
-                                <div style={{marginTop: -20}}>{loginFormik.errors.password}</div>
+                                <div style={{marginTop: -20, color: "red"}}>{loginFormik.errors.password}</div>
                                 ) : null}
                             <input
                                 type="submit"
