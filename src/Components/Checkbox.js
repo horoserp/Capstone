@@ -6,7 +6,7 @@ function Checkbox({ children, inputName, labelCol, labelRow, selectCol, selectRo
             type="checkbox"
             id={inputName}
             checked={isChecked}
-            style={{gridColumn: selectCol, gridRow: selectRow}}
+            style={{gridColumn: selectCol, gridRow: selectRow, minWidth: 30}}
             onChange={onChangeHandler}
         />
         </>

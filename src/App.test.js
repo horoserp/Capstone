@@ -18,10 +18,3 @@ test('fetchAPI returns a non-empty array of booking times', () => {
   const result = testAPI.fetchAPI("2024-01-10");
   expect(result).not.toHaveLength(0);
 })
-
-test('Checks that submit input is initially disabled', () => {
-  render(<Reservations/>);
-  // Need to figure out how to pass props to ReserveForm
-  // const button = render(<ReserveForm state={} stateChange={}/>).getByTestId("submit-button");
-  // expect(button.disabled).toBeTruthy();
-})

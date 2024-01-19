@@ -142,107 +142,108 @@ function ReserveForm(state, stateChange) {
     return (
         <form
             onSubmit={handleSubmit}
-            className="grid"
         >
-            <label htmlFor="res-date" className="col-1 gap">{dateError()}</label>
-            <input
-                type="date"
-                id="res-date"
-                className="col-1"
-                value={date}
-                onChange={dateHandler}
-                onBlur={handleDateBlur}
-                required
-                aria-required="true"
-            />
-            <SelectBar
-                inputName="res-time"
-                display={time}
-                onChangeHandler={timeHandler}
-                onBlur={handleTimeBlur}
-                options={availableTimes[availableTimes.length - 1].available}
-                labelCol="3/4"
-                labelRow="1/2"
-                selectCol="3/4"
-                selectRow="2/3"
-                required
-                aria-required="true"
-                isDisabled={!timeIsDisabled}
-            >
-                {timeError()}
-            </SelectBar>
-            <label htmlFor="guests" className="col-1 gap">{guestError()}</label>
-            <input
-                type="number"
-                value={numOfGuests}
-                min="1"
-                max="10"
-                id="guests"
-                className="col-1"
-                placeholder="Select"
-                onChange={(e) => setNumOfGuests(e.target.value)}
-                onBlur={handleGuestBlur}
-                aria-required="true"
-                required
-            />
-            <SelectBar
-                inputName="occasion"
-                display={occasion}
-                onChangeHandler={eventHandler}
-                options={event}
-                labelCol="3/4"
-                labelRow="3/4"
-                selectCol="3/4"
-                selectRow="4/5"
-            >
-                Occasion (Optional)
-            </SelectBar>
-            <fieldset id="res-heading">
+            <div className="grid">
+                <div>
+                    <label htmlFor="res-date" className="gap">{dateError()}</label>
+                    <div>
+                        <input
+                            type="date"
+                            id="res-date"
+                            value={date}
+                            onChange={dateHandler}
+                            onBlur={handleDateBlur}
+                            required
+                            style={{minWidth: "45%"}}
+                            aria-required="true"
+                        />
+                    </div>
+                </div>
+                <div>
+                    <SelectBar
+                        inputName="res-time"
+                        display={time}
+                        onChangeHandler={timeHandler}
+                        onBlur={handleTimeBlur}
+                        options={availableTimes[availableTimes.length - 1].available}
+                        required
+                        aria-required="true"
+                        isDisabled={!timeIsDisabled}
+                    >
+                        <div>{timeError()}</div>
+                    </SelectBar>
+                </div>
+                <div>
+                    <label htmlFor="guests" className="gap">{guestError()}</label>
+                    <div>
+                        <input
+                            type="number"
+                            value={numOfGuests}
+                            min="1"
+                            max="10"
+                            id="guests"
+                            placeholder="Select"
+                            onChange={(e) => setNumOfGuests(e.target.value)}
+                            onBlur={handleGuestBlur}
+                            aria-required="true"
+                            required
+                            style={{minWidth: "45%"}}
+                        />
+                    </div>
+                </div>
+                <div>
+                    <SelectBar
+                        inputName="occasion"
+                        display={occasion}
+                        onChangeHandler={eventHandler}
+                        options={event}
+                    >
+                        <div>Occasion (Optional)</div>
+                    </SelectBar>
+                </div>
+            </div>
+            <fieldset>
                 <legend>Seating Options</legend>
-                <div className="grid">
-                    <Checkbox
-                        inputName="wheelchair"
-                        isChecked={accessible}
-                        labelCol="1/2"
-                        labelRow="1/2"
-                        selectCol="1/2"
-                        selectRow="2/3"
-                        onChangeHandler={accessibleHandler}
-                    >
-                        Wheelchair Accessible
-                    </Checkbox>
-                    <Checkbox
-                        inputName="child-seat"
-                        isChecked={child}
-                        labelCol="2/3"
-                        labelRow="1/2"
-                        selectCol="2/3"
-                        selectRow="2/3"
-                        onChangeHandler={childHandler}
-                    >
-                        Child Seat
-                    </Checkbox>
-                    <Checkbox
-                        inputName="outdoor"
-                        isChecked={outdoor}
-                        labelCol="3/4"
-                        labelRow="1/2"
-                        selectCol="3/4"
-                        selectRow="2/3"
-                        onChangeHandler={outdoorHandler}
-                    >
-                        Outdoor Seating
-                    </Checkbox>
+                <div className="grid-seating">
+                    <div>
+                        <Checkbox
+                            inputName="wheelchair"
+                            isChecked={accessible}
+                            onChangeHandler={accessibleHandler}
+                        >
+                            <div>Wheelchair Accessible</div>
+                        </Checkbox>
+                    </div>
+                    <div>
+                        <Checkbox
+                            inputName="child-seat"
+                            isChecked={child}
+                            onChangeHandler={childHandler}
+                        >
+                            <div>Child Seat</div>
+                        </Checkbox>
+                    </div>
+                    <div>
+                        <Checkbox
+                            inputName="outdoor"
+                            isChecked={outdoor}
+                            onChangeHandler={outdoorHandler}
+                        >
+                            <div>Outdoor Seating</div>
+                        </Checkbox>
+                    </div>
                 </div>
             </fieldset>
-            <input
-                type="submit"
-                data-testid="submit-button"
-                style={{gridColumn: "2/3", gridRow: "8/9", marginTop: 30}}
-                value="Make Your Reservation"
-                disabled={!submitIsValid}
-                aria-label="On Click"
+            <div className="center">
+                <input
+                    type="submit"
+                    data-testid="submit-button"
+                    value="Make Your Reservation"
+                    style={{marginTop: 35, }}
+                    disabled={!submitIsValid}
+                    aria-label="On Click"
                 />
+            </div>
         </form>
     );
 }
