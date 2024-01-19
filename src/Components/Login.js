@@ -66,6 +66,7 @@ function Login() {
             <div className="highlight-b" style={{paddingTop: 20}}>
                 <form
                     onSubmit={guestFormik.handleSubmit}
+                    style={{paddingBottom: 30}}
                 >
                     <fieldset>
                         <legend className="center underline" style={{fontSize: "xx-large"}}>Proceed as Guest</legend>
@@ -171,6 +172,7 @@ function Login() {
             <div className="highlight-b">
                 <form
                     onSubmit={loginFormik.handleSubmit}
+                    style={{paddingBottom: 30}}
                 >
                     <fieldset>
                         <legend className="center underline" style={{fontSize: "xx-large"}}>Login</legend>
