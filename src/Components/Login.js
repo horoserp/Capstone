@@ -6,7 +6,6 @@ import Reservations from "./Reservations";
 function Login() {
 
     const navigate = useNavigate();
-    const phoneRegExp = "[0-9]{3}-[0-9]{3}-[0-9]{4}";
 
     const loginValidate = Yup.object().shape({
         userName: Yup.string()
@@ -37,7 +36,9 @@ function Login() {
         lastName: Yup.string()
             .required("Last name is required"),
         phone: Yup.string()
-            .matches(phoneRegExp, "Phone number must match 123-456-7890")
+            .matches(/^[0-9]+$/, "Must be only numbers")
+            .min(10, "Must be 10 numbers")
+            .max(10, "Must be 10 numbers")
             .required("Phone number is required"),
         email: Yup.string()
             .email("Invalid email address: user@example.com")
@@ -123,7 +124,7 @@ function Login() {
                                 type="tel"
                                 id="phone"
                                 name="phone"
-                                placeholder="123-456-7890"
+                                placeholder="1234567890"
                                 onChange={guestFormik.handleChange}
                                 onBlur={guestFormik.handleBlur}
                                 value={guestFormik.values.userName}
