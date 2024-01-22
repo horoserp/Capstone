@@ -26,24 +26,49 @@ function ReserveForm(state, stateChange) {
     const availableTimes = state.state;
     const setAvailableTimes = state.stateChange;
 
+    const isDateValid = (m_date) => {
+
+        const today = new Date();
+        today.setHours(0,0,0,0);
+
+        if(m_date === "") {
+            return false;
+        } else {
+            const d = m_date.split("-",3);
+            const testDate = new Date(d[0], d[1]-1, d[2]);
+            if(testDate < today) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     const submitIsValid =
         (date !== "") &&
+        (isDateValid(date)) &&
         (time !== "") &&
         (time !== "--Select a Time--") &&
         (numOfGuests > 0) &&
         (numOfGuests < 11);
 
-    const timeIsDisabled = (date !== "");
+    const timeIsDisabled = (date !== "" && isDateValid(date));
 
     const handleDateBlur = () => {
         setDateValidating(true);
     }
 
     const dateError = () => {
+        // console.log(date);
+        // console.log(isDateValid(date));
         if(dateValidating && date === "") {
             return (
-                <div className="col-1 error">Please enter a valid date</div>
+                <div className="col-1 error">Date is required</div>
             );
+        } else if (dateValidating && !isDateValid(date)) {
+        // if(dateValidating && isDateValid(date)) {
+            return (
+                <div className="col-1 error">Please enter today's date or later</div>
+            )
         }
         return "Choose date*";
     }
