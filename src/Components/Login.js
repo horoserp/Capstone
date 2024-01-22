@@ -37,8 +37,8 @@ function Login() {
             .required("Last name is required"),
         phone: Yup.string()
             .matches(/^[0-9]+$/, "Must be only numbers")
-            .min(10, "Must be 10 numbers")
-            .max(10, "Must be 10 numbers")
+            .min(10, "Must be exactly 10 numbers")
+            .max(10, "Must be exactly 10 numbers")
             .required("Phone number is required"),
         email: Yup.string()
             .email("Invalid email address: user@example.com")
