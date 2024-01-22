@@ -30,7 +30,8 @@ function ReserveForm(state, stateChange) {
         (date !== "") &&
         (time !== "") &&
         (time !== "--Select a Time--") &&
-        (numOfGuests > 0);
+        (numOfGuests > 0) &&
+        (numOfGuests < 11);
 
     const timeIsDisabled = (date !== "");
 
