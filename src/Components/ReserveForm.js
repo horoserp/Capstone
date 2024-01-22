@@ -58,14 +58,11 @@ function ReserveForm(state, stateChange) {
     }
 
     const dateError = () => {
-        // console.log(date);
-        // console.log(isDateValid(date));
         if(dateValidating && date === "") {
             return (
                 <div className="col-1 error">Date is required</div>
             );
         } else if (dateValidating && !isDateValid(date)) {
-        // if(dateValidating && isDateValid(date)) {
             return (
                 <div className="col-1 error">Please enter today's date or later</div>
             )
