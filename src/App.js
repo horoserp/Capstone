@@ -15,7 +15,7 @@ function App() {
     <main>
       <Nav/>
       <Routes>
-        <Route exact path="/" element={<Homepage />} />
+        <Route exact path="/home" element={<Homepage />} />
         <Route path="/about" element={<About />} />
         <Route path="/highlights" element={<Highlights />} />
         <Route path="/reservations" element={<Reservations renderButton={true}>(Step 1 of 2)</Reservations>} />
