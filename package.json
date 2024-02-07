@@ -2,7 +2,7 @@
   "name": "capstone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://horoserp.github.io/Capstone/home",
+  "homepage": "https://horoserp.github.io/Capstone/",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.0"
   },
