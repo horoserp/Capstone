@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Capstone/static/css/main.ee08dd98.css",
+    "main.js": "/Capstone/static/js/main.265288c6.js",
+    "static/js/787.53414382.chunk.js": "/Capstone/static/js/787.53414382.chunk.js",
+    "static/media/Mario and Adrian A.jpg": "/Capstone/static/media/Mario and Adrian A.7f44c6d6e341a27d14b3.jpg",
+    "static/media/Mario and Adrian b.jpg": "/Capstone/static/media/Mario and Adrian b.6ba0e06bfa9c1ea75109.jpg",
+    "static/media/greek salad.jpg": "/Capstone/static/media/greek salad.bed423a1fab5b210e347.jpg",
+    "static/media/restauranfood.jpg": "/Capstone/static/media/restauranfood.e8abf5b772b6817189aa.jpg",
+    "static/media/restaurant.jpg": "/Capstone/static/media/restaurant.324d0f99bdf19400a0f7.jpg",
+    "static/media/test1.jpg": "/Capstone/static/media/test1.769d0623c3bd06221b5f.jpg",
+    "static/media/test2.jpg": "/Capstone/static/media/test2.2af778bc01ea1270e533.jpg",
+    "static/media/test4.jpg": "/Capstone/static/media/test4.a076574005b2ebe569fb.jpg",
+    "static/media/test5.jpg": "/Capstone/static/media/test5.ca90bf8769c1e86f6e7c.jpg",
+    "static/media/Logo.svg": "/Capstone/static/media/Logo.6c132dfefa69396bba43f72aa595e62f.svg",
+    "static/media/bruchetta.jpg": "/Capstone/static/media/bruchetta.f150c3e0a60d164241ea.jpg",
+    "static/media/Logo Mono.png": "/Capstone/static/media/Logo Mono.7940837928fcc5d88891.png",
+    "index.html": "/Capstone/index.html",
+    "static/media/Basket.svg": "/Capstone/static/media/Basket.07e27ef8e2d39d8d311117a6b04ece1d.svg",
+    "static/media/circle-arrow-left-solid.svg": "/Capstone/static/media/circle-arrow-left-solid.3eeed78e2bc786aa6fa79f16b9139244.svg",
+    "static/media/circle-check-solid.svg": "/Capstone/static/media/circle-check-solid.779cfad3965b9d447c3c8ae010579c5e.svg",
+    "main.ee08dd98.css.map": "/Capstone/static/css/main.ee08dd98.css.map",
+    "main.265288c6.js.map": "/Capstone/static/js/main.265288c6.js.map",
+    "787.53414382.chunk.js.map": "/Capstone/static/js/787.53414382.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ee08dd98.css",
+    "static/js/main.265288c6.js"
+  ]
+}
