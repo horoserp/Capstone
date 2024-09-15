@@ -15,6 +15,7 @@ function App() {
     <main>
       <Nav/>
       <Routes>
+        <Route exact path="/Capstone" element={<Homepage />} />
         <Route exact path="/" element={<Homepage />} />
         <Route path="/about" element={<About />} />
         <Route path="/highlights" element={<Highlights />} />
