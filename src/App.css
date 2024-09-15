@@ -339,6 +339,7 @@ legend {
 @media (max-width: 600px) {
     .container {
         gap: 10px 0;
+        width: 90%;
     }
 
     .container > a {
@@ -369,4 +370,16 @@ legend {
         grid-template-columns: 1fr;
     }
 
+    .hero {
+        height: 300px;
+        width: 200px;
+    }
+
+    #reserve-image {
+        max-width: 300px;
+    }
+
+    input, select {
+        font-size: 25px;
+    }
 }
