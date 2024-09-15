@@ -23,7 +23,6 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/confirmation" element={<Confirmation />} />
       </Routes>
-      <Homepage/>
       <div className='primary-b'>
         <Footer/>
       </div>

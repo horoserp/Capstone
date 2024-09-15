@@ -382,4 +382,9 @@ legend {
     input, select {
         font-size: 25px;
     }
+
+    fieldset {
+        width: 75%;
+        margin: 0 6.25%;
+    }
 }
